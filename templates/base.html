@@ -1,0 +1,665 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>KR Mandap Pokhara</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="StackBros" />
+    <meta
+      name="description"
+      content="Booking - Multipurpose Online Booking Template"
+    />
+
+    <!-- Dark mode -->
+    <script>
+      const storedTheme = localStorage.getItem("theme");
+
+      const getPreferredTheme = () => {
+        if (storedTheme) {
+          return storedTheme;
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      };
+
+      const setTheme = function (theme) {
+        if (
+          theme === "auto" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+          document.documentElement.setAttribute("data-bs-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-bs-theme", theme);
+        }
+      };
+
+      setTheme(getPreferredTheme());
+
+      window.addEventListener("DOMContentLoaded", () => {
+        var el = document.querySelector(".theme-icon-active");
+        if (el != "undefined" && el != null) {
+          const showActiveTheme = (theme) => {
+            const activeThemeIcon = document.querySelector(
+              ".theme-icon-active use",
+            );
+            const btnToActive = document.querySelector(
+              `[data-bs-theme-value="${theme}"]`,
+            );
+            const svgOfActiveBtn = btnToActive
+              .querySelector(".mode-switch use")
+              .getAttribute("href");
+
+            document
+              .querySelectorAll("[data-bs-theme-value]")
+              .forEach((element) => {
+                element.classList.remove("active");
+              });
+
+            btnToActive.classList.add("active");
+            activeThemeIcon.setAttribute("href", svgOfActiveBtn);
+          };
+
+          window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", () => {
+              if (storedTheme !== "light" || storedTheme !== "dark") {
+                setTheme(getPreferredTheme());
+              }
+            });
+
+          showActiveTheme(getPreferredTheme());
+
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((toggle) => {
+              toggle.addEventListener("click", () => {
+                const theme = toggle.getAttribute("data-bs-theme-value");
+                localStorage.setItem("theme", theme);
+                setTheme(theme);
+                showActiveTheme(theme);
+              });
+            });
+        }
+      });
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico'%}" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Poppins:wght@400;500;700&amp;display=swap"
+    />
+
+    <!-- Plugins CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/vendor/tiny-slider/tiny-slider.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/vendor/glightbox/css/glightbox.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/vendor/flatpickr/css/flatpickr.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/vendor/choices/css/choices.min.css' %}"
+    />
+
+    <!-- Theme CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/css/style.css' %}"
+    />
+  </head>
+
+  <body>
+    <!-- Header START -->
+    <header class="navbar-light py-3">
+      <!-- Logo Nav START -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container d-block">
+          <div class="row align-items-center">
+            <div class="col-2">
+              <!-- Logo START -->
+              <a class="navbar-brand" href="/">
+                <img
+                  class="light-mode-item navbar-brand-item d-inline h-40px h-md-60px"
+                  src="{% static 'assets/images/logo-hotel.svg' %}"
+                  alt="logo"
+                />
+                <img
+                  class="dark-mode-item navbar-brand-item d-inline h-40px h-md-60px"
+                  src="{% static 'assets/images/logo-hotel-light.svg' %}"
+                  alt="logo"
+                />
+              </a>
+              <!-- Logo END -->
+            </div>
+
+            <div class="col-10">
+              <div class="d-sm-flex align-items-center justify-content-end">
+                <!-- Main navbar START -->
+                <div class="navbar-collapse collapse" id="navbarCollapse">
+                  <ul class="navbar-nav navbar-nav-scroll ms-auto">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About us</a>
+                    </li>
+                     <!-- Nav item Facilities -->
+                    <li class="nav-item dropdown">
+                      <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="pagesFacilities"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        >Rooms</a
+                      >
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="pagesFacilities"
+                      >
+                        <li><a class="dropdown-item" href="#">Banquet</a></li>
+                        
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'gallery'%}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Attractions</a>
+                    </li>
+                   
+                   
+                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="pagesFacilities"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        >More</a
+                      >
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="pagesFacilities"
+                      >
+                        <li><a class="dropdown-item" href="{% url 'faq' %}">FAQ's</a></li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Main navbar END -->
+
+                <!-- Toggler button and stay button -->
+                <div class="d-flex align-items-center justify-content-end">
+                  <!-- Responsive navbar toggler -->
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-animation">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                    <span class="d-none d-sm-inline-block small">Menu</span>
+                  </button>
+
+                  <!-- Booking form dropdown START -->
+                  <div class="nav-item dropdown form-control-bg-light">
+                    <!-- Stay button -->
+                    <a
+                      class="btn btn-sm btn-primary mb-0"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      data-bs-auto-close="outside"
+                    >
+                      Book a stay
+                    </a>
+
+                    
+                  </div>
+                  <!-- Booking form dropdown END -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Logo Nav END -->
+    </header>
+    <!-- Header END -->
+
+    {% block content %} {% endblock %}
+
+    <!-- =======================
+Footer START -->
+    <footer class="bg-dark pt-5">
+      <div class="container">
+        <!-- Row START -->
+        <div class="row g-4">
+          <!-- Widget 1 START -->
+          <div class="col-lg-3">
+            <!-- logo -->
+            <a href="index.html">
+              <img
+                class="h-40px"
+                src="{% static 'assets/images/logo-light.svg' %}"
+                alt="logo"
+              />
+            </a>
+            <p class="my-3 text-body-secondary">
+              Departure defective arranging rapturous did believe him all had
+              supported.
+            </p>
+            <p class="mb-2">
+              <a href="#" class="text-body-secondary text-primary-hover"
+                ><i class="bi bi-telephone me-2"></i>+1234 568 963</a
+              >
+            </p>
+            <p class="mb-0">
+              <a href="#" class="text-body-secondary text-primary-hover"
+                ><i class="bi bi-envelope me-2"></i>example@gmail.com</a
+              >
+            </p>
+          </div>
+          <!-- Widget 1 END -->
+
+          <!-- Widget 2 START -->
+          <div class="col-lg-8 ms-auto">
+            <div class="row g-4">
+              <!-- Link block -->
+              <div class="col-6 col-md-3">
+                <h5 class="text-white mb-2 mb-md-4">Page</h5>
+                <ul class="nav flex-column text-primary-hover">
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      >About us</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      >Contact us</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      >News and Blog</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      >Meet a Team</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Link block -->
+              <div class="col-6 col-md-3">
+                <h5 class="text-white mb-2 mb-md-4">Link</h5>
+                <ul class="nav flex-column text-primary-hover">
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#">Sign up</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#">Sign in</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      >Privacy Policy</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#">Terms</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#">Cookie</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#">Support</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Link block -->
+              <div class="col-6 col-md-3">
+                <h5 class="text-white mb-2 mb-md-4">Global Site</h5>
+                <ul class="nav flex-column text-primary-hover">
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#">India</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      >California</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      >Indonesia</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#">Canada</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      >Malaysia</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Link block -->
+              <div class="col-6 col-md-3">
+                <h5 class="text-white mb-2 mb-md-4">Booking</h5>
+                <ul class="nav flex-column text-primary-hover">
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      ><i class="fa-solid fa-hotel me-2"></i>Hotel</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      ><i class="fa-solid fa-plane me-2"></i>Flight</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      ><i class="fa-solid fa-globe-americas me-2"></i>Tour</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-body-secondary" href="#"
+                      ><i class="fa-solid fa-car me-2"></i>Cabs</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Widget 2 END -->
+        </div>
+        <!-- Row END -->
+
+        <!-- Tops Links -->
+        <div class="row mt-5">
+          <h5 class="mb-2 text-white">Top Links</h5>
+          <ul class="list-inline text-primary-hover lh-lg">
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Flights</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Hotels</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Tours</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Cabs</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">About</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Contact us</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Blogs</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Services</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Detail page</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Services</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Policy</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Testimonials</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Newsletters</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Podcasts</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Protests</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">NewsCyber</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Education</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Sports</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Tech and Auto</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Opinion</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="text-body-secondary">Share Market</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Payment and card -->
+        <div class="row g-4 justify-content-between mt-0 mt-md-2">
+          <!-- Payment card -->
+          <div class="col-sm-7 col-md-6 col-lg-4">
+            <h5 class="text-white mb-2">Payment & Security</h5>
+            <ul class="list-inline mb-0 mt-3">
+              <li class="list-inline-item">
+                <a href="#"
+                  ><img
+                    src="{% static 'assets/images/element/paypal.svg' %}"
+                    class="h-30px"
+                    alt=""
+                /></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"
+                  ><img
+                    src="{% static 'assets/images/element/visa.svg' %}"
+                    class="h-30px"
+                    alt=""
+                /></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"
+                  ><img
+                    src="{% static 'assets/images/element/mastercard.svg' %}"
+                    class="h-30px"
+                    alt=""
+                /></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"
+                  ><img
+                    src="{% static 'assets/images/element/expresscard.svg' %}"
+                    class="h-30px"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social media icon -->
+          <div class="col-sm-5 col-md-6 col-lg-3 text-sm-end">
+            <h5 class="text-white mb-2">Follow us on</h5>
+            <ul class="list-inline mb-0 mt-3">
+              <li class="list-inline-item">
+                <a class="btn btn-sm px-2 bg-facebook mb-0" href="#"
+                  ><i class="fab fa-fw fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-sm shadow px-2 bg-instagram mb-0" href="#"
+                  ><i class="fab fa-fw fa-instagram"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-sm shadow px-2 bg-twitter mb-0" href="#"
+                  ><i class="fab fa-fw fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-sm shadow px-2 bg-linkedin mb-0" href="#"
+                  ><i class="fab fa-fw fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="mt-4 mb-0" />
+
+        <!-- Bottom footer -->
+        <div class="row">
+          <div class="container">
+            <div
+              class="d-lg-flex justify-content-between align-items-center py-3 text-center text-lg-start"
+            >
+              <!-- copyright text -->
+              <div class="text-body-secondary text-primary-hover">
+                Copyrights ©2023 Booking. Build by
+                <a href="#" class="text-body-secondary">StackBros</a>.
+              </div>
+              <!-- copyright links-->
+              <div class="nav mt-2 mt-lg-0">
+                <ul class="list-inline text-primary-hover mx-auto mb-0">
+                  <li class="list-inline-item me-0">
+                    <a class="nav-link text-body-secondary py-1" href="#"
+                      >Privacy policy</a
+                    >
+                  </li>
+                  <li class="list-inline-item me-0">
+                    <a class="nav-link text-body-secondary py-1" href="#"
+                      >Terms and conditions</a
+                    >
+                  </li>
+                  <li class="list-inline-item me-0">
+                    <a class="nav-link text-body-secondary py-1 pe-0" href="#"
+                      >Refund policy</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- =======================
+Footer END -->
+
+    <!-- Modal START -->
+    <div class="modal fade" id="map360" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Title -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="map360label">Hotel 360 View</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- Body -->
+          <div class="modal-body p-3">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!4v1664190302197!6m8!1m7!1sgWjBbRwH2wMmQTbvyZwkGw!2m2!1d51.49712857925994!2d-0.1593322776188391!3f348.1837813715552!4f17.07463868756892!5f0.8485845663286693"
+              width="100%"
+              height="400"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal END -->
+
+    <!-- Back to top -->
+    <div class="back-top"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Vendors -->
+    <script src="{% static 'assets/vendor/tiny-slider/tiny-slider.js' %}"></script>
+    <script src="{% static 'assets/vendor/purecounterjs/dist/purecounter_vanilla.html' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.js' %}"></script>
+    <script src="{% static 'assets/vendor/flatpickr/js/flatpickr.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/choices/js/choices.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/jarallax/jarallax.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/jarallax/jarallax-video.min.js' %}"></script>
+
+    <!-- ThemeFunctions -->
+    <script src="{% static 'assets/js/functions.js' %}"></script>
+  </body>
+</html>

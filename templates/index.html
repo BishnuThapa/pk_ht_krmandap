@@ -1,0 +1,1336 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+  <!-- =======================
+Main Banner START -->
+  <section class="py-0">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 mx-auto">
+          <!-- Slider START -->
+          <div
+            class="tiny-slider arrow-round arrow-blur arrow-hover rounded-3 overflow-hidden"
+          >
+            <div
+              class="tiny-slider-inner"
+              data-gutter="0"
+              data-arrow="true"
+              data-dots="false"
+              data-items="1"
+            >
+              <!-- Card item START -->
+              <div
+                class="card overflow-hidden h-400px h-sm-600px rounded-0"
+                style="
+                  background-image: url({% static 'assets/images/category/hotel/06.jpg' %});
+                  background-position: center left;
+                  background-size: cover;
+                "
+              >
+                <!-- Background dark overlay -->
+                <div class="bg-overlay bg-dark opacity-3"></div>
+                <!-- Card image overlay -->
+                <div class="card-img-overlay d-flex align-items-center">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-11 col-lg-7">
+                        <h6 class="text-white fw-normal mb-0">
+                          💖 Fall in love with the City
+                        </h6>
+                        <!-- Title -->
+                        <h1 class="text-white display-6">
+                          Modern Luxury In Manhattan
+                        </h1>
+                        <a href="#" class="btn btn-primary mb-0"
+                          >Reserve Today</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card item END -->
+
+              <!-- Card item START -->
+              <div
+                class="card overflow-hidden h-400px h-sm-600px bg-parallax text-center rounded-0"
+                data-jarallax-video="https://www.youtube.com/watch?v=j56YlCXuPFU"
+              >
+                <!-- Background dark overlay -->
+                <div class="bg-overlay bg-dark opacity-3"></div>
+                <!-- Card image overlay -->
+                <div class="card-img-overlay d-flex align-items-center">
+                  <div class="container w-100 my-auto">
+                    <div class="row justify-content-center">
+                      <div class="col-11 col-lg-8">
+                        <!-- Title -->
+                        <h1 class="text-white">
+                          Taking luxury hospitality to new heights
+                        </h1>
+                        <a href="#" class="btn btn-dark mb-0">Take Me There</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card item END -->
+            </div>
+          </div>
+          <!-- Slider END -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =======================
+Main Banner END -->
+
+  <!-- =======================
+About START -->
+  <section class="pt-5 pt-md-8 pb-4">
+    <div class="container z-index-9">
+      <div class="row">
+        <div class="col-lg-10 m-auto text-center">
+          <h2>Here is a tribute to good life!</h2>
+          <p class="lead">
+            Size-like body someone had. Are conduct viewing boy minutes warrant
+            the expense? Tolerably behavior may admit daughters offending her
+            ask own. Praise effects wish change way and any wanted. Lively use
+            looked latter regard had. Do he it part more last in. We understand
+            that theory is important to build a solid foundation, we understand
+            that theory alone isn't going to get the job done so that's why this
+            is packed with practical hands-on examples that you can follow step
+            by step.
+          </p>
+
+          <!-- List -->
+          <ul
+            class="list-inline hstack gap-4 flex-wrap justify-content-center mt-4"
+          >
+            <li class="list-inline-item">
+              <h5 class="mb-0 fw-normal">
+                <i class="bi bi-star fa-fw text-warning me-1"></i>Highest
+                Rating
+              </h5>
+            </li>
+            <li class="list-inline-item">
+              <h5 class="mb-0 fw-normal">
+                <i class="bi bi-pin-map fa-fw text-primary me-1"></i>Best
+                Locations
+              </h5>
+            </li>
+            <li class="list-inline-item">
+              <h5 class="mb-0 fw-normal">
+                <i class="bi bi-x-octagon fa-fw text-danger me-1"></i>Free
+                Cancellation
+              </h5>
+            </li>
+            <li class="list-inline-item">
+              <h5 class="mb-0 fw-normal">
+                <i class="bi bi-wallet fa-fw text-success me-1"></i>Payment
+                Options
+              </h5>
+            </li>
+          </ul>
+
+          <!-- Button and rating -->
+          <div class="d-sm-flex justify-content-center align-items-center mt-4">
+            <!-- Rating -->
+            <div
+              class="d-flex justify-content-center align-items-center text-start me-0 me-sm-4"
+            >
+              <h3 class="me-2 mb-0">4.5</h3>
+              <div>
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item me-0 small">
+                    <i class="fas fa-star text-warning"></i>
+                  </li>
+                  <li class="list-inline-item me-0 small">
+                    <i class="fas fa-star text-warning"></i>
+                  </li>
+                  <li class="list-inline-item me-0 small">
+                    <i class="fas fa-star text-warning"></i>
+                  </li>
+                  <li class="list-inline-item me-0 small">
+                    <i class="fas fa-star text-warning"></i>
+                  </li>
+                  <li class="list-inline-item me-0 small">
+                    <i class="fas fa-star-half-alt text-warning"></i>
+                  </li>
+                </ul>
+                <p class="mb-0 small">Clients Love Us!</p>
+              </div>
+            </div>
+            <!-- Button -->
+            <div>
+              <a href="#" class="btn btn-lg btn-dark mb-0">Explore now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row END -->
+    </div>
+  </section>
+  <!-- =======================
+About END -->
+
+  <!-- =======================
+Hotel grid START -->
+  <section class="pt-5 pt-md-8 pb-4">
+    <div class="container">
+      <!-- Title -->
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2 class="mb-0">Our Luxuries Rooms</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <!-- Card item START -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card shadow p-2 pb-0 h-100">
+            <!-- Overlay item -->
+            <div class="position-absolute top-0 start-0 z-index-1 m-4">
+              <div class="badge bg-danger text-white">30% Off</div>
+            </div>
+
+            <!-- Slider START -->
+            <div
+              class="tiny-slider arrow-round arrow-xs arrow-dark rounded-2 overflow-hidden"
+            >
+              <div
+                class="tiny-slider-inner"
+                data-autoplay="false"
+                data-arrow="true"
+                data-dots="false"
+                data-items="1"
+              >
+                <!-- Image item -->
+                <div>
+                  <img
+                    src="{% static 'assets/images/category/hotel/4by3/09.jpg'%}"
+                    alt="Card image"
+                  />
+                </div>
+
+                <!-- Image item -->
+                <div>
+                  <img
+                    src="{% static 'assets/images/category/hotel/4by3/02.jpg'%}"
+                    alt="Card image"
+                  />
+                </div>
+
+                <!-- Image item -->
+                <div>
+                  <img
+                    src="{% static 'assets/images/category/hotel/4by3/03.jpg'%}"
+                    alt="Card image"
+                  />
+                </div>
+
+                <!-- Image item -->
+                <div>
+                  <img
+                    src="{% static 'assets/images/category/hotel/4by3/01.jpg'%}"
+                    alt="Card image"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Slider END -->
+
+            <!-- Card body START -->
+            <div class="card-body px-3 pb-0">
+              <!-- Rating and cart -->
+              <div class="d-flex justify-content-between mb-3">
+                <a href="#" class="badge bg-dark text-white"
+                  ><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.5</a
+                >
+                <a href="#" class="h6 mb-0 z-index-2"
+                  ><i class="bi fa-fw bi-bookmark"></i
+                ></a>
+              </div>
+
+              <!-- Title -->
+              <h5 class="card-title">
+                <a href="hotel-detail.html">Hotel Baljees Regency</a>
+              </h5>
+
+              <!-- List -->
+              <ul class="nav nav-divider mb-2 mb-sm-3">
+                <li class="nav-item">Air Conditioning</li>
+                <li class="nav-item">Wifi</li>
+                <li class="nav-item">Kitchen</li>
+                <li class="nav-item">Pool</li>
+              </ul>
+            </div>
+            <!-- Card body END -->
+
+            <!-- Card footer START-->
+            <div class="card-footer pt-0">
+              <!-- Price and Button -->
+              <div
+                class="d-sm-flex justify-content-sm-between align-items-center"
+              >
+                <!-- Price -->
+                <div class="d-flex align-items-center">
+                  <h5 class="fw-normal text-success mb-0 me-1">$750</h5>
+                  <span class="mb-0 me-2">/day</span>
+                  <span class="text-decoration-line-through">$1000</span>
+                </div>
+                <!-- Button -->
+                <div class="mt-2 mt-sm-0">
+                  <a
+                    href="hotel-detail.html"
+                    class="btn btn-sm btn-primary-soft mb-0 w-100"
+                    >View Detail<i class="bi bi-arrow-right ms-2"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card item END -->
+
+        <!-- Card item START -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card shadow p-2 pb-0 h-100">
+            <!-- Image -->
+            <img
+              src="{% static 'assets/images/category/hotel/4by3/10.jpg'%}"
+              class="rounded-2"
+              alt="Card image"
+            />
+
+            <!-- Card body START -->
+            <div class="card-body px-3 pb-0">
+              <!-- Rating and cart -->
+              <div class="d-flex justify-content-between mb-3">
+                <a href="#" class="badge bg-dark text-white"
+                  ><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.0</a
+                >
+                <a href="#" class="h6 mb-0 z-index-2"
+                  ><i class="bi fa-fw bi-bookmark"></i
+                ></a>
+              </div>
+
+              <!-- Title -->
+              <h5 class="card-title">
+                <a href="hotel-detail.html">Courtyard by Marriott New York </a>
+              </h5>
+
+              <!-- List -->
+              <ul class="nav nav-divider mb-2 mb-sm-3">
+                <li class="nav-item">Air Conditioning</li>
+                <li class="nav-item">Wifi</li>
+                <li class="nav-item">Pool</li>
+                <li class="nav-item">More+</li>
+              </ul>
+            </div>
+            <!-- Card body END -->
+
+            <!-- Card footer START-->
+            <div class="card-footer pt-0">
+              <!-- Price and Button -->
+              <div
+                class="d-sm-flex justify-content-sm-between align-items-center"
+              >
+                <!-- Price -->
+                <div class="d-flex align-items-center">
+                  <h5 class="fw-normal text-success mb-0 me-1">$1200</h5>
+                  <span class="mb-0 me-2">/day</span>
+                </div>
+                <!-- Button -->
+                <div class="mt-2 mt-sm-0 z-index-2">
+                  <a
+                    href="hotel-detail.html"
+                    class="btn btn-sm btn-primary-soft mb-0 w-100"
+                    >View Detail<i class="bi bi-arrow-right ms-2"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card item END -->
+
+        <!-- Card item START -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card shadow p-2 pb-0 h-100">
+            <!-- Image -->
+            <img
+              src="{% static 'assets/images/category/hotel/4by3/08.jpg' %}"
+              class="rounded-2"
+              alt="Card image"
+            />
+
+            <!-- Card body START -->
+            <div class="card-body px-3 pb-0">
+              <!-- Rating and cart -->
+              <div class="d-flex justify-content-between mb-3">
+                <a href="#" class="badge bg-dark text-white"
+                  ><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.8</a
+                >
+                <a href="#" class="h6 mb-0 z-index-2"
+                  ><i class="bi fa-fw bi-bookmark-fill text-danger"></i
+                ></a>
+              </div>
+
+              <!-- Title -->
+              <h5 class="card-title">
+                <a href="hotel-detail.html">Club Quarters Hotel</a>
+              </h5>
+
+              <!-- List -->
+              <ul class="nav nav-divider mb-2 mb-sm-3">
+                <li class="nav-item">Air Conditioning</li>
+                <li class="nav-item">Wifi</li>
+                <li class="nav-item">Kitchen</li>
+                <li class="nav-item">Pool</li>
+              </ul>
+            </div>
+            <!-- Card body END -->
+
+            <!-- Card footer START-->
+            <div class="card-footer pt-0">
+              <!-- Price and Button -->
+              <div
+                class="d-sm-flex justify-content-sm-between align-items-center"
+              >
+                <!-- Price -->
+                <div class="d-flex align-items-center">
+                  <h5 class="fw-normal text-success mb-0 me-1">$980</h5>
+                  <span class="mb-0 me-2">/day</span>
+                </div>
+                <!-- Button -->
+                <div class="mt-2 mt-sm-0 z-index-2">
+                  <a
+                    href="hotel-detail.html"
+                    class="btn btn-sm btn-primary-soft mb-0 w-100"
+                    >View Detail<i class="bi bi-arrow-right ms-2"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card item END -->
+
+      </div>
+      <!-- Row END -->
+
+    </div>
+  </section>
+  <!-- =======================
+Hotel grid END -->
+
+  <!-- =======================
+Special offer START -->
+  <section class="pb-0">
+    <div class="container">
+      <!-- Title -->
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h3 class="mb-0">Special Offers</h3>
+        </div>
+      </div>
+
+      <!-- Slider START -->
+      <div class="tiny-slider arrow-round arrow-blur arrow-hover">
+        <div
+          class="tiny-slider-inner mb-8"
+          data-autoplay="true"
+          data-arrow="true"
+          data-edge="2"
+          data-dots="false"
+          data-items-xl="3"
+          data-items-lg="3"
+          data-items-md="2"
+          data-items-sm="1"
+        >
+          <!-- Offer card START -->
+          <div>
+            <div class="card">
+              <img
+                src="{% static 'assets/images/offer/06.jpg' %}"
+                class="card-img"
+                alt=""
+              />
+              <!-- Card body -->
+              <div
+                class="position-absolute top-100 start-50 translate-middle w-100"
+              >
+                <div
+                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
+                >
+                  <h6 class="card-title mb-1">
+                    <a href="#">Spa Package Offer</a>
+                  </h6>
+                  <small>Valid through Dec 2022</small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Offer card END -->
+
+          <!-- Offer card START -->
+          <div>
+            <div class="card">
+              <img
+                src="{% static 'assets/images/offer/07.jpg' %}"
+                class="card-img"
+                alt=""
+              />
+              <!-- Card body -->
+              <div
+                class="position-absolute top-100 start-50 translate-middle w-100"
+              >
+                <div
+                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
+                >
+                  <h6 class="card-title mb-1">
+                    <a href="#">Elevate Your Stay</a>
+                  </h6>
+                  <small>Valid through Feb 2023</small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Offer card END -->
+
+          <!-- Offer card START -->
+          <div>
+            <div class="card">
+              <img
+                src="{% static 'assets/images/offer/08.jpg' %}"
+                class="card-img"
+                alt=""
+              />
+              <!-- Card body -->
+              <div
+                class="position-absolute top-100 start-50 translate-middle w-100"
+              >
+                <div
+                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
+                >
+                  <h6 class="card-title mb-1">
+                    <a href="#">Pass Holder Package</a>
+                  </h6>
+                  <small>Valid through Feb 2023</small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Offer card END -->
+
+          <!-- Offer card START -->
+          <div>
+            <div class="card">
+              <img
+                src="{% static 'assets/images/offer/05.jpg' %}"
+                class="card-img"
+                alt=""
+              />
+              <!-- Card body -->
+              <div
+                class="position-absolute top-100 start-50 translate-middle w-100"
+              >
+                <div
+                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
+                >
+                  <h6 class="card-title mb-1">
+                    <a href="#">2023 Golf Tournament Package</a>
+                  </h6>
+                  <small>Valid through Jan 2021</small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Offer card END -->
+        </div>
+      </div>
+      <!-- Slider END -->
+    </div>
+  </section>
+  <!-- =======================
+Special offer END -->
+
+  <!-- =======================
+About START -->
+  <section class="py-0 py-lg-7">
+    <div class="container">
+      <!-- Title -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <h2>
+            We always provide the best for our hotel visitors. We are happy to
+            help you.
+          </h2>
+          <p class="mb-0">
+            We focus a great deal on the understanding of behavioral psychology
+            and influence triggers which are crucial for becoming a well-rounded
+            Digital Marketer. We understand that theory is important to build a
+            solid foundation, we understand that theory alone isn't going to get
+            the job done.
+          </p>
+        </div>
+      </div>
+
+      <!-- Counters and features START -->
+      <div class="row g-4">
+        <!-- Counter -->
+        <div class="col-xl-4">
+          <div
+            class="card card-body bg-primary bg-opacity-10 vstack gap-4 justify-content-center h-100 p-4"
+          >
+            <!-- Counter item -->
+            <div class="d-flex justify-content-between align-items-center">
+              <h3
+                class="purecounter text-primary mb-0"
+                data-purecounter-start="0"
+                data-purecounter-end="10"
+                data-purecounter-delay="200"
+              >
+                0
+              </h3>
+              <h6 class="fw-normal mb-0">Total Hotels</h6>
+            </div>
+
+            <!-- Counter item -->
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-center me-3">
+                <h3
+                  class="purecounter text-primary mb-0"
+                  data-purecounter-start="0"
+                  data-purecounter-end="200"
+                  data-purecounter-delay="300"
+                >
+                  0
+                </h3>
+                <span class="h3 text-primary mb-0">+</span>
+              </div>
+              <h6 class="fw-normal mb-0">Total Staff</h6>
+            </div>
+
+            <!-- Counter item -->
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-center me-3">
+                <h3
+                  class="purecounter text-primary mb-0"
+                  data-purecounter-start="0"
+                  data-purecounter-end="50"
+                  data-purecounter-delay="300"
+                >
+                  0
+                </h3>
+                <span class="h3 text-primary mb-0">+</span>
+              </div>
+              <h6 class="fw-normal mb-0">Amazing Services</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card overflow-hidden">
+            <!-- Image -->
+            <img
+              src="{% static 'assets/images/about/07.jpg' %}"
+              class="rounded-3"
+              alt=""
+            />
+            <!-- Full screen button -->
+            <div class="w-100 h-100">
+              <button
+                class="btn btn-dark position-absolute top-50 start-50 translate-middle mb-0"
+                data-bs-toggle="modal"
+                data-bs-target="#map360"
+              >
+                <i class="bi bi-eye me-2"></i>View 360
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="col-md-6 col-xl-4">
+          <ul class="list-group list-group-borderless">
+            <li class="list-group-item py-3">
+              <h6 class="mb-0 fw-normal">
+                <i class="bi bi-cash-coin fa-fw text-info me-2"></i>Best Rate
+                Guaranteed
+              </h6>
+            </li>
+
+            <li class="list-group-item py-3">
+              <h6 class="mb-0 fw-normal">
+                <i class="bi bi-credit-card-2-back fa-fw text-warning me-2"></i
+                >Payment at Hotel
+              </h6>
+            </li>
+
+            <li class="list-group-item py-3">
+              <h6 class="mb-0 fw-normal">
+                <i class="bi bi-wallet fa-fw text-success me-2"></i>Exclusive
+                Members Rewards
+              </h6>
+            </li>
+
+            <li class="list-group-item py-3">
+              <h6 class="mb-0 fw-normal">
+                <i class="bi bi-wifi fa-fw text-danger me-2"></i>WIFI Access
+              </h6>
+            </li>
+
+            <li class="list-group-item pt-3 pb-0">
+              <h6 class="mb-0 fw-normal">
+                <i class="bi bi-tags fa-fw text-orange me-2"></i>No Hidden
+                Changes
+              </h6>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Counters and features END -->
+    </div>
+  </section>
+  <!-- =======================
+About END -->
+
+  <!-- =======================
+Services START -->
+  <section class="pt-0 pt-lg-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <!-- Title -->
+          <h2>We Provide Our Best Facilities For You</h2>
+          <p>
+            Book your hotel with us and don't forget to grab an awesome hotel
+            deal to save massive on your stay.
+          </p>
+          <!-- Button -->
+          <a href="#" class="btn btn-dark mb-4">Contact Us</a>
+          <!-- Services -->
+          <div class="row g-sm-4">
+            <div class="col-sm-6">
+              <ul class="list-group list-group-borderless mt-2 mb-0">
+                <li class="list-group-item">
+                  <h6 class="fw-normal mb-0">
+                    <i class="fa-solid fa-wifi fa-fw text-primary me-2"></i>Free
+                    Wifi
+                  </h6>
+                </li>
+
+                <li class="list-group-item">
+                  <h6 class="fw-normal mb-0">
+                    <i
+                      class="fa-solid fa-person-swimming fa-fw text-primary me-2"
+                    ></i
+                    >Swimming Pool
+                  </h6>
+                </li>
+
+                <li class="list-group-item">
+                  <h6 class="fw-normal mb-0">
+                    <i
+                      class="fa-solid fa-person-shelter fa-fw text-primary me-2"
+                    ></i
+                    >Private Workshop
+                  </h6>
+                </li>
+
+                <li class="list-group-item">
+                  <h6 class="fw-normal mb-0">
+                    <i class="fa-solid fa-utensils fa-fw text-primary me-2"></i
+                    >Breakfast
+                  </h6>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-sm-6">
+              <ul class="list-group list-group-borderless">
+                <li class="list-group-item">
+                  <h6 class="fw-normal mb-0">
+                    <i class="fa-solid fa-bolt fa-fw text-primary me-2"></i>Free
+                    Electricity
+                  </h6>
+                </li>
+
+                <li class="list-group-item">
+                  <h6 class="fw-normal mb-0">
+                    <i class="fa-solid fa-dumbbell fa-fw text-primary me-2"></i
+                    >Gym Space
+                  </h6>
+                </li>
+
+                <li class="list-group-item">
+                  <h6 class="fw-normal mb-0">
+                    <i class="fa-solid fa-spa fa-fw text-primary me-2"></i>Spa
+                  </h6>
+                </li>
+
+                <li class="list-group-item">
+                  <h6 class="fw-normal mb-0">
+                    <a href="#"
+                      ><i
+                        class="fa-solid fa-ellipsis fa-fw text-primary me-2"
+                      ></i
+                      >Other Services</a
+                    >
+                  </h6>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="bg-light rounded-3 h-100 p-4">
+            <!-- Slider START -->
+            <div class="tiny-slider arrow-round arrow-blur">
+              <div
+                class="tiny-slider-inner"
+                data-autoplay="true"
+                data-arrow="true"
+                data-edge="2"
+                data-dots="false"
+                data-items-xl="1"
+                data-items-md="1"
+              >
+                <!-- Card START -->
+                <div class="card bg-transparent">
+                  <div class="row g-4 align-items-center">
+                    <div class="col-sm-6">
+                      <img
+                        src="{% static 'assets/images/category/flight/02.jpg' %}"
+                        class="img-fluid card-img"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card-body p-0">
+                        <h6 class="fw-normal mb-3">Honeymoon Sweets</h6>
+                        <h4 class="card-title mb-3">
+                          <a href="#" class="stretched-link"
+                            >Maldives Sunshine Hotel</a
+                          >
+                        </h4>
+                        <a href="#" class="btn btn-link p-0"
+                          >Explore Now <i class="bi bi-arrow-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card END -->
+
+                <!-- Card START -->
+                <div class="card bg-transparent">
+                  <div class="row g-4 align-items-center">
+                    <div class="col-sm-6">
+                      <img
+                        src="{% static 'assets/images/category/flight/01.jpg' %}"
+                        class="img-fluid card-img"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card-body p-0">
+                        <h6 class="fw-normal mb-3">Royal Stay</h6>
+                        <h4 class="card-title mb-3">
+                          <a href="#" class="stretched-link"
+                            >Booking Grad Palace Japan</a
+                          >
+                        </h4>
+                        <a href="#" class="btn btn-link p-0"
+                          >Explore Now <i class="bi bi-arrow-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card END -->
+
+                <!-- Card START -->
+                <div class="card bg-transparent">
+                  <div class="row g-4 align-items-center">
+                    <div class="col-sm-6">
+                      <img
+                        src="{% static 'assets/images/category/flight/03.jpg' %}"
+                        class="img-fluid card-img"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card-body p-0">
+                        <h6 class="fw-normal mb-3">Adventure Stay</h6>
+                        <h4 class="card-title mb-3">
+                          <a href="#" class="stretched-link"
+                            >Golf & Spa Resort in New York</a
+                          >
+                        </h4>
+                        <a href="#" class="btn btn-link p-0"
+                          >Explore Now <i class="bi bi-arrow-right"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card END -->
+              </div>
+            </div>
+            <!-- Slider END -->
+          </div>
+        </div>
+      </div>
+      <!-- Row END -->
+    </div>
+  </section>
+  <!-- =======================
+Services END -->
+
+  <!-- =======================
+Action box START -->
+  <section class="py-0 py-md-5">
+    <div class="container">
+      <div
+        class="position-relative rounded-3 overflow-hidden p-3 p-sm-5"
+        style="
+          background-image: url({% static 'assets/images/about/08.jpg' %});
+          background-position: center left;
+          background-size: cover;
+        "
+      >
+        <div class="row position-relative z-index-9">
+          <div class="col-md-7 col-xl-5 ms-auto">
+            <div class="card card-body p-sm-5">
+              <div
+                class="d-sm-flex justify-content-between align-items-center mb-2"
+              >
+                <h6 class="text-primary mb-0">Exclusive Offer</h6>
+                <!-- Rating -->
+                <ul class="list-inline small mb-0">
+                  <li class="list-inline-item me-0">
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </li>
+                  <li class="list-inline-item me-0">
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </li>
+                  <li class="list-inline-item me-0">
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </li>
+                  <li class="list-inline-item me-0">
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </li>
+                </ul>
+              </div>
+              <!-- Title -->
+              <h5>Enjoy Your Dream Vacation In Switzerland</h5>
+              <p class="mb-3">
+                Book your hotel with us and don't forget to grab an awesome
+                hotel deal to save massive on your stay.
+              </p>
+
+              <!-- Price -->
+              <h6 class="fw-normal mb-1">2 Days / 3 Nights</h6>
+              <div class="d-flex align-items-center">
+                <h5 class="text-success mb-0 me-1">$750</h5>
+                <span class="mb-0 me-2">/day</span>
+                <span class="text-decoration-line-through">$1000</span>
+              </div>
+              <!-- Button -->
+              <a href="#" class="btn btn-primary-soft mb-0 mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =======================
+Action box END -->
+
+  <!-- =======================
+Gallery START -->
+  <section>
+    <div class="container-fluid">
+      <!-- Title -->
+      <div class="row mb-md-4">
+        <div class="col-12 mx-auto text-center mb-4">
+          <h2 class="mb-0">Our Hotel Precious Moments</h2>
+        </div>
+      </div>
+
+      <!-- Slider START -->
+      <div
+        class="tiny-slider arrow-round arrow-blur arrow-hover rounded-3 overflow-hidden"
+      >
+        <div
+          class="tiny-slider-inner d-flex align-items-end"
+          data-autoplay="true"
+          data-edge="2"
+          data-arrow="true"
+          data-dots="false"
+          data-items="6"
+          data-items-lg="4"
+          data-items-sm="2"
+        >
+          <!-- Slider item -->
+          <div>
+            <a
+              data-glightbox=""
+              data-gallery="gallery"
+              href="assets/images/category/hotel/gallery/01.jpg"
+            >
+              <div
+                class="card card-element-hover card-overlay-hover overflow-hidden"
+              >
+                <!-- Image -->
+                <img
+                  src="{% static 'assets/images/category/hotel/gallery/01.jpg' %}"
+                  class="rounded-3"
+                  alt=""
+                />
+                <!-- Full screen button -->
+                <div class="hover-element w-100 h-100">
+                  <i
+                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slider item -->
+          <div>
+            <a
+              data-glightbox=""
+              data-gallery="gallery"
+              href="assets/images/category/hotel/gallery/02.jpg"
+            >
+              <div
+                class="card card-element-hover card-overlay-hover overflow-hidden"
+              >
+                <!-- Image -->
+                <img
+                  src="{% static 'assets/images/category/hotel/gallery/02.jpg' %}"
+                  class="rounded-3"
+                  alt=""
+                />
+                <!-- Full screen button -->
+                <div class="hover-element w-100 h-100">
+                  <i
+                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slider item -->
+          <div>
+            <a
+              data-glightbox=""
+              data-gallery="gallery"
+              href="assets/images/category/hotel/gallery/03.jpg"
+            >
+              <div
+                class="card card-element-hover card-overlay-hover overflow-hidden"
+              >
+                <!-- Image -->
+                <img
+                  src="{% static 'assets/images/category/hotel/gallery/03.jpg' %}"
+                  class="rounded-3"
+                  alt=""
+                />
+                <!-- Full screen button -->
+                <div class="hover-element w-100 h-100">
+                  <i
+                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slider item -->
+          <div>
+            <a
+              data-glightbox=""
+              data-gallery="gallery"
+              href="assets/images/category/hotel/gallery/05.jpg"
+            >
+              <div
+                class="card card-element-hover card-overlay-hover overflow-hidden"
+              >
+                <!-- Image -->
+                <img
+                  src="{% static 'assets/images/category/hotel/gallery/05.jpg' %}"
+                  class="rounded-3"
+                  alt=""
+                />
+                <!-- Full screen button -->
+                <div class="hover-element w-100 h-100">
+                  <i
+                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slider item -->
+          <div>
+            <a
+              data-glightbox=""
+              data-gallery="gallery"
+              href="assets/images/category/hotel/gallery/08.jpg"
+            >
+              <div
+                class="card card-element-hover card-overlay-hover overflow-hidden"
+              >
+                <!-- Image -->
+                <img
+                  src="{% static 'assets/images/category/hotel/gallery/08.jpg' %}"
+                  class="rounded-3"
+                  alt=""
+                />
+                <!-- Full screen button -->
+                <div class="hover-element w-100 h-100">
+                  <i
+                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slider item -->
+          <div>
+            <a
+              data-glightbox=""
+              data-gallery="gallery"
+              href="https://www.youtube.com/embed/tXHviS-4ygo"
+            >
+              <div
+                class="card card-element-hover card-overlay-hover overflow-hidden"
+              >
+                <!-- Image -->
+                <img
+                  src="{% static 'assets/images/category/hotel/gallery/04.jpg' %}"
+                  class="rounded-3"
+                  alt=""
+                />
+                <!-- Full screen button -->
+                <div class="hover-element w-100 h-100">
+                  <span
+                    class="btn text-danger btn-round btn-white position-absolute top-50 start-50 translate-middle mb-0"
+                  >
+                    <i class="fas fa-play"></i>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slider item -->
+          <div>
+            <a
+              data-glightbox=""
+              data-gallery="gallery"
+              href="assets/images/category/hotel/gallery/06.jpg"
+            >
+              <div
+                class="card card-element-hover card-overlay-hover overflow-hidden"
+              >
+                <!-- Image -->
+                <img
+                  src="{% static 'assets/images/category/hotel/gallery/06.jpg' %}"
+                  class="rounded-3"
+                  alt=""
+                />
+                <!-- Full screen button -->
+                <div class="hover-element w-100 h-100">
+                  <i
+                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slider item -->
+          <div>
+            <a
+              data-glightbox=""
+              data-gallery="gallery"
+              href="assets/images/category/hotel/gallery/07.jpg"
+            >
+              <div
+                class="card card-element-hover card-overlay-hover overflow-hidden"
+              >
+                <!-- Image -->
+                <img
+                  src="{% static 'assets/images/category/hotel/gallery/07.jpg' %}"
+                  class="rounded-3"
+                  alt=""
+                />
+                <!-- Full screen button -->
+                <div class="hover-element w-100 h-100">
+                  <i
+                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Slider END	 -->
+    </div>
+  </section>
+  <!-- =======================
+Gallery END -->
+
+
+
+<!-- =======================
+Blog START-->
+<section>
+	<div class="container">
+		<!-- Title -->
+		<div class="row mb-3 mb-sm-4">
+			<div class="col-12 text-center">
+				<h2 class="mb-0">Latest Blogs & News</h2>
+			</div>
+		</div>
+		<div class="row g-4 g-xl-5 justify-content-between">
+			<div class="col-md-6">
+				<!-- Card START -->
+				<div class="card bg-transparent">
+					<!-- Image -->
+					<img src="{% static 'assets/images/blog/01.jpg' %}" class="card-img" alt="">
+
+					<!-- Card body -->
+					<div class="card-body px-3">
+						<h4><a href="blog-detail.html" class="stretched-link">10 Ways on How to Improve your Hotel Operations</a></h4>
+					</div>
+				</div>
+				<!-- Card END -->
+			</div>
+
+			<div class="col-md-6">
+				<!-- Card START -->
+				<div class="card bg-transparent mb-4 mb-md-5">
+					<div class="row align-items-center">
+						<!-- Images -->
+						<div class="col-sm-4">
+							<img src="{% static 'assets/images/blog/02.jpg' %}" class="card-img" alt="">
+						</div>
+						<div class="col-sm-8">
+							<!-- card body -->
+							<div class="card-body p-sm-0">
+								<h5 class="card-title"><a href="blog-detail.html" class="stretched-link">Story of water world adventure</a></h5>
+								<p class="mb-0">Jacqueline Miller</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Card END -->
+
+				<!-- Card START -->
+				<div class="card bg-transparent mb-4 mb-md-5">
+					<div class="row align-items-center">
+						<!-- Images -->
+						<div class="col-sm-4">
+							<img src="{% static 'assets/images/blog/03.jpg' %}" class="card-img" alt="">
+						</div>
+						<div class="col-sm-8">
+							<!-- card body -->
+							<div class="card-body p-sm-0">
+								<h5 class="card-title"><a href="blog-detail.html" class="stretched-link">How Hotel Technology Can Help Small Hotel Businesses</a></h5>
+								<p class="mb-0">Frances Guerrero</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Card END -->
+
+				<!-- Card START -->
+				<div class="card bg-transparent mb-0 mb-md-5">
+					<div class="row align-items-center">
+						<!-- Images -->
+						<div class="col-sm-4">
+							<img src="{% static 'assets/images/blog/04.jpg' %}" class="card-img" alt="">
+						</div>
+						<div class="col-sm-8">
+							<!-- card body -->
+							<div class="card-body p-sm-0">
+								<h5 class="card-title"><a href="blog-detail.html" class="stretched-link">Hotel Service - Become a Guide for Your Guests</a></h5>
+								<p class="mb-0">Louis Ferguson</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Card END -->
+			</div>
+		</div> <!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Blog START-->
+
+<!-- =======================
+Client START -->
+<section class="py-0 py-md-5">
+	<div class="container">
+		<div class="row g-4 g-lg-7 justify-content-center align-items-center">
+			<!-- Image -->
+			<div class="col-5 col-sm-3 col-xl-2">
+				<img src="{% static 'assets/images/client/01.svg'%}" class="grayscale" alt="">
+			</div>
+			<!-- Image -->
+			<div class="col-5 col-sm-3 col-xl-2">
+				<img src="{% static 'assets/images/client/02.svg'%}" class="grayscale" alt="">
+			</div>
+			<!-- Image -->
+			<div class="col-5 col-sm-3 col-xl-2">
+				<img src="{% static 'assets/images/client/03.svg'%}" class="grayscale" alt="">
+			</div>
+			<!-- Image -->
+			<div class="col-5 col-sm-3 col-xl-2">
+				<img src="{% static 'assets/images/client/04.svg'%}" class="grayscale" alt="">
+			</div>
+			<!-- Image -->
+			<div class="col-5 col-sm-3 col-xl-2">
+				<img src="{% static 'assets/images/client/05.svg'%}" class="grayscale" alt="">
+			</div>
+			<!-- Image -->
+			<div class="col-5 col-sm-3 col-xl-2">
+				<img src="{% static 'assets/images/client/06.svg'%}" class="grayscale" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Client END -->
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+{% endblock content %}

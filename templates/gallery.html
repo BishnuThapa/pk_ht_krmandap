@@ -1,0 +1,147 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<!-- =======================
+Main banner START -->
+<section class="pt-4 pt-sm-5">
+  <!-- Background and title -->
+  <div class="container pb-6">
+    <div class="row">
+      <!-- Title -->
+      <div class="col-lg-9 text-center mx-auto">
+        <!-- Title -->
+        <h1>
+          It's a Big World Out There Go
+          <span class="position-relative z-index-9"
+            >And Explore
+            <!-- SVG START -->
+            <span
+              class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-sm-block"
+            >
+              <svg
+                class="fill-info"
+                width="356.55px"
+                height="79.36px"
+                viewBox="0 0 356.55 79.36"
+              >
+                <path
+                  d="M0,56.76c13.15-11.68,37.75-14.87,47.45-15.62c20.85-1.62,41.75,1.22,62.2,5.16c43.41,8.37,85.85,20.68,129.83,26.22 c21.05,2.65,42.12,3.47,62.96-1.21c18.31-4.11,38.98-12.97,47.7-30.8C360.39,19.59,342.4,5,322.82,2.25 c-18.69-2.62-37.64,3.81-53.23,13.85c-2.82,1.82-5.87,4.32-8.53,5.85c12.91-10.62,28.31-18.89,45.01-21.3 c17.11-2.48,43.7,1.69,49.46,21.27c5.65,19.17-13.23,36.76-28.31,44.63c-18.02,9.41-39.47,13-59.65,12.81 c-44.06-0.42-88.81-11.18-131.38-21.67C97.79,48.21,42.36,30.73,0,56.76z"
+                />
+              </svg>
+            </span>
+            <!-- SVG END -->
+          </span>
+        </h1>
+        <!-- Content -->
+        <p class="mb-3">
+          Feel at Home, Wherever You Travel
+        </p>
+        <!-- Button -->
+        <a href="#" class="btn btn-lg btn-primary-soft me-2 mb-0"
+          >Explore Hotel Glimpse<i class="bi bi-arrow-right ms-2"></i
+        ></a>
+      </div>
+    </div>
+    <!-- Row END -->
+  </div>
+
+  <!-- Image -->
+  <div class="container-fluid overflow-hidden">
+    <div class="row">
+      <!-- Card START -->
+      <div class="card bg-transparent">
+        <!-- Card header -->
+        
+        <!-- Card body -->
+        <div class="card-body px-0 pb-0">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <a
+                class="w-100 h-100"
+                data-glightbox
+                data-gallery="gallery"
+                href="{% static 'assets/images/category/directory/01.jpg' %}"
+              >
+                <div
+                  class="card card-element-hover card-overlay-hover overflow-hidden"
+                >
+                  <!-- Image -->
+                  <img
+                    src="{% static 'assets/images/category/directory/01.jpg' %}"
+                    class="card-img"
+                    alt=""
+                  />
+                  <!-- Full screen button -->
+                  <div class="hover-element w-100 h-100">
+                    <i
+                      class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-4">
+              <a
+                class="w-100 h-100"
+                data-glightbox
+                data-gallery="gallery"
+                href="{% static 'assets/images/category/directory/09.jpg' %}"
+              >
+                <div
+                  class="card card-element-hover card-overlay-hover overflow-hidden"
+                >
+                  <!-- Image -->
+                  <img
+                    src="{% static 'assets/images/category/directory/09.jpg' %}"
+                    class="card-img"
+                    alt=""
+                  />
+                  <!-- Full screen button -->
+                  <div class="hover-element w-100 h-100">
+                    <i
+                      class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-4">
+              <a
+                class="w-100 h-100"
+                data-glightbox
+                data-gallery="gallery"
+                href="{% static 'assets/images/category/directory/02.jpg' %}"
+              >
+                <div
+                  class="card card-element-hover card-overlay-hover overflow-hidden"
+                >
+                  <!-- Image -->
+                  <img
+                    src="{% static 'assets/images/category/directory/02.jpg' %}"
+                    class="card-img"
+                    alt=""
+                  />
+                  <!-- Full screen button -->
+                  <div class="hover-element w-100 h-100">
+                    <i
+                      class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+          
+          </div>
+        </div>
+      </div>
+      <!-- Card END -->
+    </div>
+    <!-- Row END -->
+  </div>
+</section>
+<!-- =======================
+Main banner END -->
+
+{% endblock content %}
