@@ -182,7 +182,7 @@
                     <li class="nav-item dropdown">
                       <a
                         class="nav-link dropdown-toggle"
-                        href="#"
+                        href="{% url 'rooms' %}"
                         id="pagesFacilities"
                         data-bs-toggle="dropdown"
                         aria-haspopup="true"
@@ -198,13 +198,13 @@
                       </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Offers</a>
+                        <a class="nav-link" href="{% url 'offer' %}">Offers</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'gallery'%}">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Attractions</a>
+                        <a class="nav-link" href="{% url 'attraction'%}">Attractions</a>
                     </li>
                    
                    
@@ -227,6 +227,9 @@
                       >
                         <li><a class="dropdown-item" href="{% url 'faq' %}">FAQ's</a></li>
                         
+                        {% for page in pages %}
+                        <li><a class="dropdown-item" href="{% url 'page-detail' page.slug  %}">{{ page.title }}</a></li>
+                        {% endfor %}
                       </ul>
                     </li>
                   </ul>

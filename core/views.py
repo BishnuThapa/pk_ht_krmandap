@@ -33,11 +33,11 @@ def index(request):
 
 
 def attraction(request):
-    attractions=Attraction.objects.all().order_by('ordering')
-    context={
-        'attractions':attractions
-        }
-    return render(request, 'attraction.html',context)
+    # attractions=Attraction.objects.all().order_by('ordering')
+    # context={
+    #     'attractions':attractions
+    #     }
+    return render(request, 'attraction.html')
 
 def gallery(request):
     # images=Gallery.objects.all().order_by('ordering')
@@ -66,12 +66,26 @@ def contact(request):
     return render(request, 'contact.html')
 
 def faqs(request):
-    # faqs=Faq.objects.all().order_by('ordering')
-    # context={
-    #     'faqs':faqs
-    #     }
-    return render(request, 'faqs.html')
+    faqs=Faq.objects.all().order_by('ordering')
+    context={
+        'faqs':faqs
+        }
+    return render(request, 'faqs.html',context)
 
+
+def offer(request):
+    # offers=Offer.objects.filter(is_active=True).order_by('ordering')
+    # context={
+    #     'offers':offers
+    #     }
+    return render(request, 'offer.html')
+
+def rooms(request):
+    # rooms=Room.objects.all().order_by('ordering')
+    # context={
+    #     'rooms':rooms
+    #     }
+    return render(request, 'rooms.html')
 
 def room_detail(request, slug):
     room = get_object_or_404(Room, slug=slug)

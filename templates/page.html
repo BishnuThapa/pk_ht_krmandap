@@ -1,6 +1,28 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+  
+  <!-- =======================
+Compare listing START -->
+  <section>
+    <div class="container">
+      <div class="row g-4">
+        
+        <h3>{{ page.title }}</h3>
+
+        <div class="col-md-10 mx-auto">
+          
+        <p class="lead"> {{ page.description | safe }}</p>
+         
+        </div>
+      </div>
+      <!-- Row END -->
+    </div>
+  </section>
+  <!-- =======================
+Compare listing END -->
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
 
 {% endblock content %}

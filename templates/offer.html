@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %} 
+{% block content %}
+
+<main>
+  <!-- =======================
+Special offer START -->
+  <section class="pb-0">
+    <div class="container">
+      <!-- Title -->
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h3 class="mb-0">Special Offers</h3>
+        </div>
+      </div>
+
+      <!-- Slider START -->
+      <div class="tiny-slider arrow-round arrow-blur arrow-hover">
+        <div
+          class="tiny-slider-inner mb-8"
+          data-autoplay="true"
+          data-arrow="true"
+          data-edge="2"
+          data-dots="false"
+          data-items-xl="3"
+          data-items-lg="3"
+          data-items-md="2"
+          data-items-sm="1"
+        >
+          <!-- Offer card START -->
+          <div>
+            <div class="card">
+              <img
+                src="{% static 'assets/images/offer/06.jpg' %}"
+                class="card-img"
+                alt=""
+              />
+              <!-- Card body -->
+              <div
+                class="position-absolute top-100 start-50 translate-middle w-100"
+              >
+                <div
+                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
+                >
+                  <h6 class="card-title mb-1">
+                    <a href="#">Spa Package Offer</a>
+                  </h6>
+                  <small>Valid through Dec 2022</small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Offer card END -->
+
+          <!-- Offer card START -->
+          <div>
+            <div class="card">
+              <img
+                src="{% static 'assets/images/offer/07.jpg' %}"
+                class="card-img"
+                alt=""
+              />
+              <!-- Card body -->
+              <div
+                class="position-absolute top-100 start-50 translate-middle w-100"
+              >
+                <div
+                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
+                >
+                  <h6 class="card-title mb-1">
+                    <a href="#">Elevate Your Stay</a>
+                  </h6>
+                  <small>Valid through Feb 2023</small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Offer card END -->
+
+          <!-- Offer card START -->
+          <div>
+            <div class="card">
+              <img
+                src="{% static 'assets/images/offer/08.jpg' %}"
+                class="card-img"
+                alt=""
+              />
+              <!-- Card body -->
+              <div
+                class="position-absolute top-100 start-50 translate-middle w-100"
+              >
+                <div
+                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
+                >
+                  <h6 class="card-title mb-1">
+                    <a href="#">Pass Holder Package</a>
+                  </h6>
+                  <small>Valid through Feb 2023</small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Offer card END -->
+
+          <!-- Offer card START -->
+          <div>
+            <div class="card">
+              <img
+                src="{% static 'assets/images/offer/05.jpg' %}"
+                class="card-img"
+                alt=""
+              />
+              <!-- Card body -->
+              <div
+                class="position-absolute top-100 start-50 translate-middle w-100"
+              >
+                <div
+                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
+                >
+                  <h6 class="card-title mb-1">
+                    <a href="#">2023 Golf Tournament Package</a>
+                  </h6>
+                  <small>Valid through Jan 2021</small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Offer card END -->
+        </div>
+      </div>
+      <!-- Slider END -->
+    </div>
+  </section>
+  <!-- =======================
+Special offer END -->
+</main>
+{% endblock content %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<main>
+  <!-- =======================
+Listing START -->
+  <section class="pt-0 pt-sm-5">
+    <div class="container">
+      <!-- Title -->
+      <div class="row mb-4 mb-sm-5">
+        <div class="col-12 text-center">
+          <h2 class="mb-0">Great places to Explore</h2>
+          <p class="mb-0">
+            Book your hotel with us and don't forget to grab an awesome hotel
+            deal to save massive on your stay.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+       
+       
+        <!-- Card item -->
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <div class="card shadow h-100">
+            <div class="position-relative">
+              <!-- Image -->
+              <img
+                src="{% static 'assets/images/category/directory/05.jpg'%}"
+                class="card-img-top"
+                alt="Card image"
+              />
+              
+            </div>
+
+            <!-- Card body START -->
+            <div class="card-body">
+              
+              <!-- Title -->
+              <h5 class="card-title me-2">
+                <a href="directory-detail.html">Car Service & Repair</a>
+              </h5>
+
+              <!-- Content -->
+              <p class="mb-0">
+                Starts at  for 1 person
+              </p>
+            </div>
+            <!-- Card body END -->
+
+            <!-- Card footer START-->
+            <div class="card-footer border-top">
+              <!-- Buttons -->
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="directory-detail.html" class="btn btn-link p-0 mb-0"
+                  >View detail<i class="bi bi-arrow-right ms-1"></i
+                ></a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+  <!-- =======================
+Listing END -->
+</main>
+{% endblock content %}

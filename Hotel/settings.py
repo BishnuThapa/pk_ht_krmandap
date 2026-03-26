@@ -20,7 +20,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+     'django_daisy',
     'django.contrib.admin',
+    'django.contrib.humanize',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -72,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processor.default',
             ],
         },
     },
@@ -240,3 +243,40 @@ CKEDITOR_5_CONFIGS = {
 # Define a constant in settings.py to specify file upload permissions
 # Possible values: "staff", "authenticated", "any"
 CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"
+
+
+# Django Daisy settings
+DAISY_SETTINGS = {
+    'SITE_TITLE': 'KR Mandap Admin',  # The title of the site
+    # Header text displayed in the admin panel
+    'SITE_HEADER': 'KR Mandap Hotel',
+    # The title for the index page of dashboard
+    'INDEX_TITLE': 'Hi, welcome to your dashboard',
+    # Path to the logo image displayed in the sidebar
+    # 'SITE_LOGO': '/static/admin/img/daisyui-logomark.svg',
+    # List of extra stylesheets to be loaded in base.html (optional)
+    'EXTRA_STYLES': [],
+    # List of extra script URLs to be loaded in base.html (optional)
+    'EXTRA_SCRIPTS': [],
+    # If True, loads full DaisyUI components in the admin (useful if you have custom template overrides)
+    'LOAD_FULL_STYLES': False,
+    # If True, the filter sidebar will open by default on changelist views
+    'SHOW_CHANGELIST_FILTER': False,
+    'DONT_SUPPORT_ME': False,  # Hide github link in sidebar footer
+    'SIDEBAR_FOOTNOTE': '',  # add footnote to sidebar
+    'APPS_REORDER': {
+        # Custom configurations for third-party apps that can't be modified directly in their `apps.py`
+        'auth': {
+            # FontAwesome icon for the 'auth' app
+            'icon': 'fa-solid fa-person-military-pointing',
+            'name': 'Authentication',  # Custom name for the 'auth' app
+            # Whether to hide the 'auth' app from the sidebar (set to True to hide)
+            'hide': False,
+            'divider_title': "Auth",  # Divider title for the 'auth' section
+        },
+        'social_django': {
+            # Custom FontAwesome icon for the 'social_django' app
+            'icon': 'fa-solid fa-users-gear',
+        },
+    },
+}
