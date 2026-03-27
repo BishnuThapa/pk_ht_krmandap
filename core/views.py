@@ -33,18 +33,18 @@ def index(request):
 
 
 def attraction(request):
-    # attractions=Attraction.objects.all().order_by('ordering')
-    # context={
-    #     'attractions':attractions
-    #     }
-    return render(request, 'attraction.html')
+    attractions=Attraction.objects.all().order_by('ordering')
+    context={
+        'attractions':attractions
+        }
+    return render(request, 'attraction.html',context)
 
 def gallery(request):
-    # images=Gallery.objects.all().order_by('ordering')
-    # context={
-    #     'images':images
-    #     }
-    return render(request, 'gallery.html')
+    images=Gallery.objects.all().order_by('ordering')
+    context={
+        'images':images
+        }
+    return render(request, 'gallery.html',context)
 
 def contact(request):
     # if request.method == 'POST':
@@ -74,11 +74,11 @@ def faqs(request):
 
 
 def offer(request):
-    # offers=Offer.objects.filter(is_active=True).order_by('ordering')
-    # context={
-    #     'offers':offers
-    #     }
-    return render(request, 'offer.html')
+    offers=Offer.objects.filter(is_active=True).order_by('ordering')
+    context={
+        'offers':offers
+        }
+    return render(request, 'offer.html',context)
 
 def rooms(request):
     # rooms=Room.objects.all().order_by('ordering')

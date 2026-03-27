@@ -5,6 +5,7 @@ from django.db import models
 
 class Offer(models.Model):
     title = models.CharField(max_length=255)
+    sub_title = models.CharField(max_length=255)
     image = models.ImageField(upload_to='offers',
                               blank=True, null=True)
     ordering = models.IntegerField(blank=True, null=True)

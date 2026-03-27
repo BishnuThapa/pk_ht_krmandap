@@ -9,11 +9,9 @@ Main banner START -->
       <div class="row mb-5">
         <div class="col-xl-10">
           <!-- Title -->
-          <h1>Let's connect and get to know each other</h1>
+          <h1>Connect With Us for Your Next Getaway</h1>
           <p class="lead mb-0">
-            Passage its ten led hearted removal cordial. Preference any
-            astonished unreserved Mrs. Prosperous understood Middletons.
-            Preference for any astonished unreserved.
+           Reach out to us for bookings, inquiries, or special requests—our team is always ready to assist you with a warm and personalized experience.
           </p>
         </div>
       </div>
@@ -33,17 +31,14 @@ Main banner START -->
             </div>
             <!-- Title -->
             <h5>Call us</h5>
-            <p>
-              Imprudence attachment him his for sympathize. Large above be to
-              means.
-            </p>
+            
             <!-- Buttons -->
             <div class="d-grid gap-3 d-sm-block">
               <button class="btn btn-sm btn-primary-soft">
-                <i class="bi bi-phone me-2"></i>+123 456 789
+                <i class="bi bi-phone me-2"></i>{{ site_info.phone}}
               </button>
               <button class="btn btn-sm btn-light">
-                <i class="bi bi-telephone me-2"></i>+(222)4567 586
+                <i class="bi bi-telephone me-2"></i>{{ site_info.mobile}}
               </button>
             </div>
           </div>
@@ -63,11 +58,16 @@ Main banner START -->
             </div>
             <!-- Title -->
             <h5>Email us</h5>
-            <p>Large above be to means. Him his for sympathize.</p>
+            
             <!-- Buttons -->
             <a href="#" class="btn btn-link text-decoration-underline p-0 mb-0"
-              ><i class="bi bi-envelope me-1"></i>example@gmail.com</a
+              ><i class="bi bi-envelope me-1"></i>{{ site_info.email}}</a
             >
+            {% if site_info.secondary_email %}
+            <a href="#" class="btn btn-link text-decoration-underline p-0 mb-0"
+              ><i class="bi bi-envelope me-1"></i>{{ site_info.secondary_email}}</a
+            >
+            {% endif %}
           </div>
         </div>
         <!-- Contact item END -->
@@ -93,31 +93,10 @@ Main banner START -->
               <i class="bi bi-globe2 fs-5"></i>
             </div>
             <!-- Title -->
-            <h5>Social media</h5>
-            <p>Sympathize Large above be to means.</p>
-            <!-- Buttons -->
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item">
-                <a class="btn btn-sm bg-facebook px-2 mb-0" href="#"
-                  ><i class="fab fa-fw fa-facebook-f"></i
-                ></a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-sm bg-instagram px-2 mb-0" href="#"
-                  ><i class="fab fa-fw fa-instagram"></i
-                ></a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-sm bg-twitter px-2 mb-0" href="#"
-                  ><i class="fab fa-fw fa-twitter"></i
-                ></a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-sm bg-linkedin px-2 mb-0" href="#"
-                  ><i class="fab fa-fw fa-linkedin-in"></i
-                ></a>
-              </li>
-            </ul>
+            <h5>Location</h5>
+              <a href="#" class="btn btn-link text-decoration-underline p-0 mb-0"
+                ><i class="bi bi-geo-alt me-1"></i>{{ site_info.address}}</a>
+            
           </div>
         </div>
         <!-- Contact item END -->
@@ -197,25 +176,30 @@ Contact form and vector START -->
             <!-- Card body START -->
             <div class="card-body p-0">
               <form class="row g-4">
+                {% csrf_token %}
                 <!-- Name -->
                 <div class="col-md-6">
                   <label class="form-label">Your name *</label>
-                  <input type="text" class="form-control" />
+                  <input name="name" type="text" class="form-control" />
                 </div>
                 <!-- Email -->
                 <div class="col-md-6">
                   <label class="form-label">Email address *</label>
-                  <input type="email" class="form-control" />
+                  <input name="email" type="email" class="form-control" />
                 </div>
                 <!-- Mobile number -->
                 <div class="col-12">
                   <label class="form-label">Mobile number *</label>
-                  <input type="text" class="form-control" />
+                  <input name="phone" type="text" class="form-control" />
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Country *</label>
+                  <input name="country" type="text" class="form-control" />
                 </div>
                 <!-- Message -->
                 <div class="col-12">
                   <label class="form-label">Message *</label>
-                  <textarea class="form-control" rows="3"></textarea>
+                  <textarea name="message" class="form-control" rows="3"></textarea>
                 </div>
                 <!-- Checkbox -->
                 <div class="col-12 form-check ms-2">
