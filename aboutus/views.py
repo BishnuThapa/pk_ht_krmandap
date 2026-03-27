@@ -5,12 +5,12 @@ from .models import *
 
 def about(request):
 
-    # about = About.objects.first()
-    # context = {
-    #     'about': about,
+    about = About.objects.first()
+    context = {
+        'about': about,
 
-    # }
-    return render(request, 'about.html')
+    }
+    return render(request, 'about.html',context)
 
 
 def chairmanmessage(request):

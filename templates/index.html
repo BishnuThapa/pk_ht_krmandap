@@ -10,7 +10,7 @@ Main Banner START -->
         <div class="col-lg-12 mx-auto">
           <!-- Slider START -->
           <div
-            class="tiny-slider arrow-round arrow-blur arrow-hover rounded-3 overflow-hidden"
+            class="tiny-slider arrow-round arrow-blur arrow-hover overflow-hidden"
           >
             <div
               class="tiny-slider-inner"
@@ -19,11 +19,12 @@ Main Banner START -->
               data-dots="false"
               data-items="1"
             >
+            {% for slider in sliders %}
               <!-- Card item START -->
               <div
                 class="card overflow-hidden h-400px h-sm-600px rounded-0"
                 style="
-                  background-image: url({% static 'assets/images/category/hotel/06.jpg' %});
+                  background-image: url({{ slider.image.url }});
                   background-position: center left;
                   background-size: cover;
                 "
@@ -36,13 +37,13 @@ Main Banner START -->
                     <div class="row">
                       <div class="col-11 col-lg-7">
                         <h6 class="text-white fw-normal mb-0">
-                          💖 Fall in love with the City
+                          💖 {{ slider.sub_title }}
                         </h6>
                         <!-- Title -->
                         <h1 class="text-white display-6">
-                          Modern Luxury In Manhattan
+                          {{ slider.title }}
                         </h1>
-                        <a href="#" class="btn btn-primary mb-0"
+                        <a href="{% url 'contact' %}" class="btn btn-primary mb-0"
                           >Reserve Today</a
                         >
                       </div>
@@ -51,30 +52,9 @@ Main Banner START -->
                 </div>
               </div>
               <!-- Card item END -->
-
-              <!-- Card item START -->
-              <div
-                class="card overflow-hidden h-400px h-sm-600px bg-parallax text-center rounded-0"
-                data-jarallax-video="https://www.youtube.com/watch?v=j56YlCXuPFU"
-              >
-                <!-- Background dark overlay -->
-                <div class="bg-overlay bg-dark opacity-3"></div>
-                <!-- Card image overlay -->
-                <div class="card-img-overlay d-flex align-items-center">
-                  <div class="container w-100 my-auto">
-                    <div class="row justify-content-center">
-                      <div class="col-11 col-lg-8">
-                        <!-- Title -->
-                        <h1 class="text-white">
-                          Taking luxury hospitality to new heights
-                        </h1>
-                        <a href="#" class="btn btn-dark mb-0">Take Me There</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Card item END -->
+              {% endfor %}
+              
+              
             </div>
           </div>
           <!-- Slider END -->
@@ -91,16 +71,9 @@ About START -->
     <div class="container z-index-9">
       <div class="row">
         <div class="col-lg-10 m-auto text-center">
-          <h2>Here is a tribute to good life!</h2>
+          <h2>{{ about.heading }}</h2>
           <p class="lead">
-            Size-like body someone had. Are conduct viewing boy minutes warrant
-            the expense? Tolerably behavior may admit daughters offending her
-            ask own. Praise effects wish change way and any wanted. Lively use
-            looked latter regard had. Do he it part more last in. We understand
-            that theory is important to build a solid foundation, we understand
-            that theory alone isn't going to get the job done so that's why this
-            is packed with practical hands-on examples that you can follow step
-            by step.
+            {{ about.description | safe| truncatewords:69}}
           </p>
 
           <!-- List -->
@@ -163,7 +136,7 @@ About START -->
             </div>
             <!-- Button -->
             <div>
-              <a href="#" class="btn btn-lg btn-dark mb-0">Explore now</a>
+              <a href="{% url 'about' %}" class="btn btn-lg btn-dark mb-0">Explore now</a>
             </div>
           </div>
         </div>

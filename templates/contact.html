@@ -11,7 +11,9 @@ Main banner START -->
           <!-- Title -->
           <h1>Connect With Us for Your Next Getaway</h1>
           <p class="lead mb-0">
-           Reach out to us for bookings, inquiries, or special requests—our team is always ready to assist you with a warm and personalized experience.
+            Reach out to us for bookings, inquiries, or special requests—our
+            team is always ready to assist you with a warm and personalized
+            experience.
           </p>
         </div>
       </div>
@@ -31,7 +33,7 @@ Main banner START -->
             </div>
             <!-- Title -->
             <h5>Call us</h5>
-            
+
             <!-- Buttons -->
             <div class="d-grid gap-3 d-sm-block">
               <button class="btn btn-sm btn-primary-soft">
@@ -58,14 +60,15 @@ Main banner START -->
             </div>
             <!-- Title -->
             <h5>Email us</h5>
-            
+
             <!-- Buttons -->
             <a href="#" class="btn btn-link text-decoration-underline p-0 mb-0"
               ><i class="bi bi-envelope me-1"></i>{{ site_info.email}}</a
             >
             {% if site_info.secondary_email %}
             <a href="#" class="btn btn-link text-decoration-underline p-0 mb-0"
-              ><i class="bi bi-envelope me-1"></i>{{ site_info.secondary_email}}</a
+              ><i class="bi bi-envelope me-1"></i>{{
+              site_info.secondary_email}}</a
             >
             {% endif %}
           </div>
@@ -94,9 +97,9 @@ Main banner START -->
             </div>
             <!-- Title -->
             <h5>Location</h5>
-              <a href="#" class="btn btn-link text-decoration-underline p-0 mb-0"
-                ><i class="bi bi-geo-alt me-1"></i>{{ site_info.address}}</a>
-            
+            <a href="#" class="btn btn-link text-decoration-underline p-0 mb-0"
+              ><i class="bi bi-geo-alt me-1"></i>{{ site_info.address}}</a
+            >
           </div>
         </div>
         <!-- Contact item END -->
@@ -175,7 +178,15 @@ Contact form and vector START -->
 
             <!-- Card body START -->
             <div class="card-body p-0">
-              <form class="row g-4">
+              <form
+                class="row g-4"
+                id="contact-form"
+                hx-post="{% url 'contact' %}"
+                hx-on="htmx:afterRequest: this.reset()"
+                method="post"
+                hx-target="#inquiry-status"
+                hx-swap="innerHTML"
+              >
                 {% csrf_token %}
                 <!-- Name -->
                 <div class="col-md-6">
@@ -199,7 +210,11 @@ Contact form and vector START -->
                 <!-- Message -->
                 <div class="col-12">
                   <label class="form-label">Message *</label>
-                  <textarea name="message" class="form-control" rows="3"></textarea>
+                  <textarea
+                    name="message"
+                    class="form-control"
+                    rows="3"
+                  ></textarea>
                 </div>
                 <!-- Checkbox -->
                 <div class="col-12 form-check ms-2">
@@ -213,11 +228,13 @@ Contact form and vector START -->
                     conditions.
                   </label>
                 </div>
+                <div id="inquiry-status" class="mt-2"></div>
                 <!-- Button -->
                 <div class="col-12">
                   <button class="btn btn-dark mb-0" type="button">
                     Send Message
                   </button>
+                  <div id="msgSubmit" class="h3 hidden"></div>
                 </div>
               </form>
             </div>
@@ -237,12 +254,26 @@ Map START -->
     <div class="container">
       <div class="row">
         <div class="col-12">
-          
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.6828132440983!2d83.95626897548564!3d28.21694787589426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399594e3da381dc5%3A0xb02881ac904bb531!2sHotel%20KR%20Mandap!5e0!3m2!1sen!2snp!4v1774438442815!5m2!1sen!2snp" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.6828132440983!2d83.95626897548564!3d28.21694787589426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399594e3da381dc5%3A0xb02881ac904bb531!2sHotel%20KR%20Mandap!5e0!3m2!1sen!2snp!4v1774438442815!5m2!1sen!2snp"
+            width="100%"
+            height="500"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>
   </section>
+  <script>
+    document.addEventListener("htmx:afterRequest", function (event) {
+      if (event.target.id === "contact-form") {
+        document.getElementById("contact-form").reset();
+      }
+    });
+  </script>
   <!-- =======================
 Map END -->
 </main>
