@@ -12,7 +12,7 @@ from .models import *
 
 
 def index(request):
-    # faqs = Faq.objects.all().order_by('ordering')
+    faqs = Faq.objects.all().order_by('ordering')
     about = About.objects.first()
     sliders = Slider.objects.filter(is_active=True).order_by('serial')
     # attractions = Attraction.objects.all().order_by('ordering')
@@ -21,7 +21,7 @@ def index(request):
     # room = Room.objects.first()
 
     context = {
-        # 'faqs': faqs,
+        'faqs': faqs,
        'about': about,
         'sliders': sliders,
         'offers':offers,

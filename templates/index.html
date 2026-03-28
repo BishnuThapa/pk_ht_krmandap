@@ -1169,6 +1169,64 @@ Blog START-->
 <!-- =======================
 Blog START-->
 
+
+
+ <!-- =======================
+Faqs START -->
+  <section class="pt-0 pt-lg-5">
+    <div class="container">
+      <!-- Title -->
+      <div class="row">
+        <div class="col-12 text-center mb-4">
+          <h2 class="mb-0">Frequently Asked Questions</h2>
+        </div>
+      </div>
+
+      <!-- Accordion START -->
+      <div class="row">
+        <div class="col-10 mx-auto">
+          <div
+            class="accordion accordion-icon accordion-bg-light"
+            id="accordionExample2"
+          >
+            {% for faq in faqs %}
+            <div class="accordion-item mb-3">
+              <h6
+                class="accordion-header font-base"
+                id="heading-{{ forloop.counter }}"
+              >
+                <button
+                  class="accordion-button fw-bold rounded d-inline-block {% if not forloop.first %}collapsed{% endif %}"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-{{ forloop.counter }}"
+                  aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                  aria-controls="collapse-{{ forloop.counter }}"
+                >
+                  {{ faq.question }}
+                </button>
+              </h6>
+
+              <!-- Body -->
+              <div
+                id="collapse-{{ forloop.counter }}"
+                class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                aria-labelledby="heading-{{ forloop.counter }}"
+                data-bs-parent="#accordionExample2"
+              >
+                <div class="accordion-body mt-3">{{ faq.answer }}</div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <!-- Accordion END -->
+    </div>
+  </section>
+  <!-- =======================
+Faqs END -->
+
 <!-- =======================
 Client START -->
 <section class="py-0 py-md-5">
