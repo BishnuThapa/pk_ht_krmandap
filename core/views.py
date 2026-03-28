@@ -17,7 +17,7 @@ def index(request):
     sliders = Slider.objects.filter(is_active=True).order_by('serial')
     # attractions = Attraction.objects.all().order_by('ordering')
     offers=Offer.objects.filter(is_active=True).order_by('ordering')
-    # images = Gallery.objects.all().order_by('ordering')[:8]
+    images = Gallery.objects.all().order_by('ordering')
     # room = Room.objects.first()
 
     context = {
@@ -26,7 +26,7 @@ def index(request):
         'sliders': sliders,
         'offers':offers,
         # 'attractions': attractions,
-        # 'images': images,
+        'images': images,
         # 'room': room,
     }
     return render(request, 'index.html',context)

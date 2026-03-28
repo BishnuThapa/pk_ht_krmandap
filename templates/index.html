@@ -864,19 +864,21 @@ Gallery START -->
           data-items-lg="4"
           data-items-sm="2"
         >
+        {% for gallery in images %}
+
           <!-- Slider item -->
           <div>
             <a
               data-glightbox=""
               data-gallery="gallery"
-              href="assets/images/category/hotel/gallery/01.jpg"
+              href="{{ gallery.image.url }}"
             >
               <div
                 class="card card-element-hover card-overlay-hover overflow-hidden"
               >
                 <!-- Image -->
                 <img
-                  src="{% static 'assets/images/category/hotel/gallery/01.jpg' %}"
+                  src="{{ gallery.image.url }}"
                   class="rounded-3"
                   alt=""
                 />
@@ -890,189 +892,8 @@ Gallery START -->
             </a>
           </div>
 
-          <!-- Slider item -->
-          <div>
-            <a
-              data-glightbox=""
-              data-gallery="gallery"
-              href="assets/images/category/hotel/gallery/02.jpg"
-            >
-              <div
-                class="card card-element-hover card-overlay-hover overflow-hidden"
-              >
-                <!-- Image -->
-                <img
-                  src="{% static 'assets/images/category/hotel/gallery/02.jpg' %}"
-                  class="rounded-3"
-                  alt=""
-                />
-                <!-- Full screen button -->
-                <div class="hover-element w-100 h-100">
-                  <i
-                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
-                  ></i>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Slider item -->
-          <div>
-            <a
-              data-glightbox=""
-              data-gallery="gallery"
-              href="assets/images/category/hotel/gallery/03.jpg"
-            >
-              <div
-                class="card card-element-hover card-overlay-hover overflow-hidden"
-              >
-                <!-- Image -->
-                <img
-                  src="{% static 'assets/images/category/hotel/gallery/03.jpg' %}"
-                  class="rounded-3"
-                  alt=""
-                />
-                <!-- Full screen button -->
-                <div class="hover-element w-100 h-100">
-                  <i
-                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
-                  ></i>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Slider item -->
-          <div>
-            <a
-              data-glightbox=""
-              data-gallery="gallery"
-              href="assets/images/category/hotel/gallery/05.jpg"
-            >
-              <div
-                class="card card-element-hover card-overlay-hover overflow-hidden"
-              >
-                <!-- Image -->
-                <img
-                  src="{% static 'assets/images/category/hotel/gallery/05.jpg' %}"
-                  class="rounded-3"
-                  alt=""
-                />
-                <!-- Full screen button -->
-                <div class="hover-element w-100 h-100">
-                  <i
-                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
-                  ></i>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Slider item -->
-          <div>
-            <a
-              data-glightbox=""
-              data-gallery="gallery"
-              href="assets/images/category/hotel/gallery/08.jpg"
-            >
-              <div
-                class="card card-element-hover card-overlay-hover overflow-hidden"
-              >
-                <!-- Image -->
-                <img
-                  src="{% static 'assets/images/category/hotel/gallery/08.jpg' %}"
-                  class="rounded-3"
-                  alt=""
-                />
-                <!-- Full screen button -->
-                <div class="hover-element w-100 h-100">
-                  <i
-                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
-                  ></i>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Slider item -->
-          <div>
-            <a
-              data-glightbox=""
-              data-gallery="gallery"
-              href="https://www.youtube.com/embed/tXHviS-4ygo"
-            >
-              <div
-                class="card card-element-hover card-overlay-hover overflow-hidden"
-              >
-                <!-- Image -->
-                <img
-                  src="{% static 'assets/images/category/hotel/gallery/04.jpg' %}"
-                  class="rounded-3"
-                  alt=""
-                />
-                <!-- Full screen button -->
-                <div class="hover-element w-100 h-100">
-                  <span
-                    class="btn text-danger btn-round btn-white position-absolute top-50 start-50 translate-middle mb-0"
-                  >
-                    <i class="fas fa-play"></i>
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Slider item -->
-          <div>
-            <a
-              data-glightbox=""
-              data-gallery="gallery"
-              href="assets/images/category/hotel/gallery/06.jpg"
-            >
-              <div
-                class="card card-element-hover card-overlay-hover overflow-hidden"
-              >
-                <!-- Image -->
-                <img
-                  src="{% static 'assets/images/category/hotel/gallery/06.jpg' %}"
-                  class="rounded-3"
-                  alt=""
-                />
-                <!-- Full screen button -->
-                <div class="hover-element w-100 h-100">
-                  <i
-                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
-                  ></i>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Slider item -->
-          <div>
-            <a
-              data-glightbox=""
-              data-gallery="gallery"
-              href="assets/images/category/hotel/gallery/07.jpg"
-            >
-              <div
-                class="card card-element-hover card-overlay-hover overflow-hidden"
-              >
-                <!-- Image -->
-                <img
-                  src="{% static 'assets/images/category/hotel/gallery/07.jpg' %}"
-                  class="rounded-3"
-                  alt=""
-                />
-                <!-- Full screen button -->
-                <div class="hover-element w-100 h-100">
-                  <i
-                    class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
-                  ></i>
-                </div>
-              </div>
-            </a>
-          </div>
+         {% endfor %}
+         
         </div>
       </div>
       <!-- Slider END	 -->
