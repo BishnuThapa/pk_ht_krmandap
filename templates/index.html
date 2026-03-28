@@ -401,13 +401,15 @@ Special offer START -->
           data-items-md="2"
           data-items-sm="1"
         >
+        {% for offer in offers %}
+
           <!-- Offer card START -->
           <div>
             <div class="card">
               <img
-                src="{% static 'assets/images/offer/06.jpg' %}"
+                src="{{ offer.image.url }}"
                 class="card-img"
-                alt=""
+                alt="{{ offer.title }}"
               />
               <!-- Card body -->
               <div
@@ -417,9 +419,9 @@ Special offer START -->
                   class="card-body text-center bg-mode shadow rounded mx-4 p-3"
                 >
                   <h6 class="card-title mb-1">
-                    <a href="#">Spa Package Offer</a>
+                    <a href="#">{{ offer.title }}</a>
                   </h6>
-                  <small>Valid through Dec 2022</small>
+                  <small>{{ offer.sub_title }}</small>
                   <div class="mt-2">
                     <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
                   </div>
@@ -429,89 +431,7 @@ Special offer START -->
           </div>
           <!-- Offer card END -->
 
-          <!-- Offer card START -->
-          <div>
-            <div class="card">
-              <img
-                src="{% static 'assets/images/offer/07.jpg' %}"
-                class="card-img"
-                alt=""
-              />
-              <!-- Card body -->
-              <div
-                class="position-absolute top-100 start-50 translate-middle w-100"
-              >
-                <div
-                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
-                >
-                  <h6 class="card-title mb-1">
-                    <a href="#">Elevate Your Stay</a>
-                  </h6>
-                  <small>Valid through Feb 2023</small>
-                  <div class="mt-2">
-                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Offer card END -->
-
-          <!-- Offer card START -->
-          <div>
-            <div class="card">
-              <img
-                src="{% static 'assets/images/offer/08.jpg' %}"
-                class="card-img"
-                alt=""
-              />
-              <!-- Card body -->
-              <div
-                class="position-absolute top-100 start-50 translate-middle w-100"
-              >
-                <div
-                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
-                >
-                  <h6 class="card-title mb-1">
-                    <a href="#">Pass Holder Package</a>
-                  </h6>
-                  <small>Valid through Feb 2023</small>
-                  <div class="mt-2">
-                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Offer card END -->
-
-          <!-- Offer card START -->
-          <div>
-            <div class="card">
-              <img
-                src="{% static 'assets/images/offer/05.jpg' %}"
-                class="card-img"
-                alt=""
-              />
-              <!-- Card body -->
-              <div
-                class="position-absolute top-100 start-50 translate-middle w-100"
-              >
-                <div
-                  class="card-body text-center bg-mode shadow rounded mx-4 p-3"
-                >
-                  <h6 class="card-title mb-1">
-                    <a href="#">2023 Golf Tournament Package</a>
-                  </h6>
-                  <small>Valid through Jan 2021</small>
-                  <div class="mt-2">
-                    <a href="#" class="btn btn-sm btn-dark mb-0">View Offer</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Offer card END -->
+         {% endfor %}
         </div>
       </div>
       <!-- Slider END -->

@@ -16,7 +16,7 @@ def index(request):
     about = About.objects.first()
     sliders = Slider.objects.filter(is_active=True).order_by('serial')
     # attractions = Attraction.objects.all().order_by('ordering')
-    # offers=Offer.objects.filter(is_active=True).order_by('ordering')
+    offers=Offer.objects.filter(is_active=True).order_by('ordering')
     # images = Gallery.objects.all().order_by('ordering')[:8]
     # room = Room.objects.first()
 
@@ -24,7 +24,7 @@ def index(request):
         # 'faqs': faqs,
        'about': about,
         'sliders': sliders,
-        # 'offers':offers,
+        'offers':offers,
         # 'attractions': attractions,
         # 'images': images,
         # 'room': room,
