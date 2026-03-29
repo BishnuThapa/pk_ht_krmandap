@@ -27,7 +27,7 @@ Main banner START -->
   </div>
 
   <!-- Image -->
-  <div class="container-fluid overflow-hidden">
+  <div class="container overflow-hidden">
     <div class="row">
       <!-- Card START -->
       <div class="card bg-transparent">
@@ -51,7 +51,8 @@ Main banner START -->
                   <img
                     src="{{ gallery.image.url }}"
                     class="card-img"
-                    alt=""
+                    alt="{{ gallery.title }}"
+                    loading="lazy"
                   />
                   <!-- Full screen button -->
                   <div class="hover-element w-100 h-100">

@@ -76,36 +76,7 @@ About START -->
             {{ about.description | safe| truncatewords:69}}
           </p>
 
-          <!-- List -->
-          <ul
-            class="list-inline hstack gap-4 flex-wrap justify-content-center mt-4"
-          >
-            <li class="list-inline-item">
-              <h5 class="mb-0 fw-normal">
-                <i class="bi bi-star fa-fw text-warning me-1"></i>Highest
-                Rating
-              </h5>
-            </li>
-            <li class="list-inline-item">
-              <h5 class="mb-0 fw-normal">
-                <i class="bi bi-pin-map fa-fw text-primary me-1"></i>Best
-                Locations
-              </h5>
-            </li>
-            <li class="list-inline-item">
-              <h5 class="mb-0 fw-normal">
-                <i class="bi bi-x-octagon fa-fw text-danger me-1"></i>Free
-                Cancellation
-              </h5>
-            </li>
-            <li class="list-inline-item">
-              <h5 class="mb-0 fw-normal">
-                <i class="bi bi-wallet fa-fw text-success me-1"></i>Payment
-                Options
-              </h5>
-            </li>
-          </ul>
-
+          
           <!-- Button and rating -->
           <div class="d-sm-flex justify-content-center align-items-center mt-4">
             <!-- Rating -->
@@ -441,148 +412,6 @@ Special offer START -->
 Special offer END -->
 
   <!-- =======================
-About START -->
-  <section class="py-0 py-lg-7">
-    <div class="container">
-      <!-- Title -->
-      <div class="row mb-4">
-        <div class="col-12">
-          <h2>
-            We always provide the best for our hotel visitors. We are happy to
-            help you.
-          </h2>
-          <p class="mb-0">
-            We focus a great deal on the understanding of behavioral psychology
-            and influence triggers which are crucial for becoming a well-rounded
-            Digital Marketer. We understand that theory is important to build a
-            solid foundation, we understand that theory alone isn't going to get
-            the job done.
-          </p>
-        </div>
-      </div>
-
-      <!-- Counters and features START -->
-      <div class="row g-4">
-        <!-- Counter -->
-        <div class="col-xl-4">
-          <div
-            class="card card-body bg-primary bg-opacity-10 vstack gap-4 justify-content-center h-100 p-4"
-          >
-            <!-- Counter item -->
-            <div class="d-flex justify-content-between align-items-center">
-              <h3
-                class="purecounter text-primary mb-0"
-                data-purecounter-start="0"
-                data-purecounter-end="10"
-                data-purecounter-delay="200"
-              >
-                0
-              </h3>
-              <h6 class="fw-normal mb-0">Total Hotels</h6>
-            </div>
-
-            <!-- Counter item -->
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex justify-content-center me-3">
-                <h3
-                  class="purecounter text-primary mb-0"
-                  data-purecounter-start="0"
-                  data-purecounter-end="200"
-                  data-purecounter-delay="300"
-                >
-                  0
-                </h3>
-                <span class="h3 text-primary mb-0">+</span>
-              </div>
-              <h6 class="fw-normal mb-0">Total Staff</h6>
-            </div>
-
-            <!-- Counter item -->
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex justify-content-center me-3">
-                <h3
-                  class="purecounter text-primary mb-0"
-                  data-purecounter-start="0"
-                  data-purecounter-end="50"
-                  data-purecounter-delay="300"
-                >
-                  0
-                </h3>
-                <span class="h3 text-primary mb-0">+</span>
-              </div>
-              <h6 class="fw-normal mb-0">Amazing Services</h6>
-            </div>
-          </div>
-        </div>
-
-        <!-- Location -->
-        <div class="col-md-6 col-xl-4">
-          <div class="card overflow-hidden">
-            <!-- Image -->
-            <img
-              src="{% static 'assets/images/about/07.jpg' %}"
-              class="rounded-3"
-              alt=""
-            />
-            <!-- Full screen button -->
-            <div class="w-100 h-100">
-              <button
-                class="btn btn-dark position-absolute top-50 start-50 translate-middle mb-0"
-                data-bs-toggle="modal"
-                data-bs-target="#map360"
-              >
-                <i class="bi bi-eye me-2"></i>View 360
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Features -->
-        <div class="col-md-6 col-xl-4">
-          <ul class="list-group list-group-borderless">
-            <li class="list-group-item py-3">
-              <h6 class="mb-0 fw-normal">
-                <i class="bi bi-cash-coin fa-fw text-info me-2"></i>Best Rate
-                Guaranteed
-              </h6>
-            </li>
-
-            <li class="list-group-item py-3">
-              <h6 class="mb-0 fw-normal">
-                <i class="bi bi-credit-card-2-back fa-fw text-warning me-2"></i
-                >Payment at Hotel
-              </h6>
-            </li>
-
-            <li class="list-group-item py-3">
-              <h6 class="mb-0 fw-normal">
-                <i class="bi bi-wallet fa-fw text-success me-2"></i>Exclusive
-                Members Rewards
-              </h6>
-            </li>
-
-            <li class="list-group-item py-3">
-              <h6 class="mb-0 fw-normal">
-                <i class="bi bi-wifi fa-fw text-danger me-2"></i>WIFI Access
-              </h6>
-            </li>
-
-            <li class="list-group-item pt-3 pb-0">
-              <h6 class="mb-0 fw-normal">
-                <i class="bi bi-tags fa-fw text-orange me-2"></i>No Hidden
-                Changes
-              </h6>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Counters and features END -->
-    </div>
-  </section>
-  <!-- =======================
-About END -->
-
-  <!-- =======================
 Services START -->
   <section class="pt-0 pt-lg-5">
     <div class="container">
@@ -595,7 +424,7 @@ Services START -->
             deal to save massive on your stay.
           </p>
           <!-- Button -->
-          <a href="#" class="btn btn-dark mb-4">Contact Us</a>
+          <a href="{% url 'contact' %}" class="btn btn-dark mb-4">Contact Us</a>
           <!-- Services -->
           <div class="row g-sm-4">
             <div class="col-sm-6">
@@ -604,7 +433,7 @@ Services START -->
                   <h6 class="fw-normal mb-0">
                     <i class="fa-solid fa-wifi fa-fw text-primary me-2"></i>Free
                     Wifi
-                  </h6>
+                  </h6>  
                 </li>
 
                 <li class="list-group-item">
@@ -1053,30 +882,13 @@ Client START -->
 <section class="py-0 py-md-5">
 	<div class="container">
 		<div class="row g-4 g-lg-7 justify-content-center align-items-center">
+      {% for ota in otas %}
 			<!-- Image -->
 			<div class="col-5 col-sm-3 col-xl-2">
-				<img src="{% static 'assets/images/client/01.svg'%}" class="grayscale" alt="">
+				<img src="{{ ota.image_optimized.url  }}" class="" alt="">
 			</div>
-			<!-- Image -->
-			<div class="col-5 col-sm-3 col-xl-2">
-				<img src="{% static 'assets/images/client/02.svg'%}" class="grayscale" alt="">
-			</div>
-			<!-- Image -->
-			<div class="col-5 col-sm-3 col-xl-2">
-				<img src="{% static 'assets/images/client/03.svg'%}" class="grayscale" alt="">
-			</div>
-			<!-- Image -->
-			<div class="col-5 col-sm-3 col-xl-2">
-				<img src="{% static 'assets/images/client/04.svg'%}" class="grayscale" alt="">
-			</div>
-			<!-- Image -->
-			<div class="col-5 col-sm-3 col-xl-2">
-				<img src="{% static 'assets/images/client/05.svg'%}" class="grayscale" alt="">
-			</div>
-			<!-- Image -->
-			<div class="col-5 col-sm-3 col-xl-2">
-				<img src="{% static 'assets/images/client/06.svg'%}" class="grayscale" alt="">
-			</div>
+      {% endfor %}
+			
 		</div>
 	</div>
 </section>

@@ -7,27 +7,33 @@ from slider.models import Slider
 from offer.models import Offer
 from inquiry.models import Inquiry
 from django.http import HttpResponse
+from facility.models import Facility
 from .models import *
+from ota.models import OTA
 # Create your views here.
 
 
 def index(request):
     faqs = Faq.objects.all().order_by('ordering')
     about = About.objects.first()
+    facilities = Facility.objects.all()
     sliders = Slider.objects.filter(is_active=True).order_by('serial')
     # attractions = Attraction.objects.all().order_by('ordering')
     offers=Offer.objects.filter(is_active=True).order_by('ordering')
     images = Gallery.objects.all().order_by('ordering')
     # room = Room.objects.first()
+    otas=OTA.objects.filter(is_active=True).order_by('ordering')
 
     context = {
         'faqs': faqs,
        'about': about,
+        'facilities': facilities,
         'sliders': sliders,
         'offers':offers,
         # 'attractions': attractions,
         'images': images,
         # 'room': room,
+        'otas': otas,
     }
     return render(request, 'index.html',context)
 
