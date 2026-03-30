@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- =======================
+Blog grid START -->
+<section class="pt-0 pt-sm-5">
+  <div class="container">
+    <!-- Title -->
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="mb-0">Latest Article</h2>
+      </div>
+    </div>
+
+    <!-- Blog grid -->
+    <div class="row g-4">
+        {% for blog in blogs %}
+      <!-- Blog item START -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-transparent">
+          <!-- Image -->
+          <div class="position-relative">
+            <img src="{{ blog.image_optimized.url }}" class="card-img" alt="{{ blog.title }}" />
+            <!-- Badge -->
+            <div class="card-img-overlay p-3">
+              <a href="#" class="badge text-bg-warning mb-2">{{ blog.readtime}} min read</a>
+            </div>
+          </div>
+
+          <!-- Card body -->
+          <div class="card-body p-3 pb-0">
+            <!-- Title -->
+            <h5 class="card-title mt-2">
+              <a href="{% url 'blog_detail' blog.slug %}"
+                >{{ blog.title }}</a
+              >
+            </h5>
+          </div>
+        </div>
+      </div>
+      <!-- Blog item END -->
+      {% endfor %}
+    </div>
+
+    
+  </div>
+</section>
+<!-- =======================
+Blog grid END -->
+{% endblock content %}

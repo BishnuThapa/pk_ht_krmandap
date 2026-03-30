@@ -16,6 +16,6 @@ urlpatterns = [
     path('contact-us', views.contact, name="contact"),
     path('faqs', views.faqs, name="faq"),
     path('page/', include('page.urls')),
-    # path('blog/', include('blog.urls')),
+    path('blog/', include('blog.urls')),
 
 ]

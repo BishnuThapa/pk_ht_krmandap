@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from facility.models import Facility
 from .models import *
 from ota.models import OTA
+from blog.models import Blog
 # Create your views here.
 
 
@@ -23,6 +24,7 @@ def index(request):
     images = Gallery.objects.all().order_by('ordering')
     # room = Room.objects.first()
     otas=OTA.objects.filter(is_active=True).order_by('ordering')
+    blogs=Blog.objects.filter(is_active=True).order_by('-created_at')[:4]
 
     context = {
         'faqs': faqs,
@@ -34,6 +36,7 @@ def index(request):
         'images': images,
         # 'room': room,
         'otas': otas,
+        'blogs': blogs,
     }
     return render(request, 'index.html',context)
 

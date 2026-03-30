@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+  <!-- =======================
+Main banner START -->
+  <section class="py-0">
+    <div class="container">
+      <!-- Title -->
+      <div class="row g-4">
+        <!-- Image -->
+        <div class="col-12">
+          <img src="{{ blog.image_optimized.url }}" class="rounded-3" alt="{{ blog.title }}" />
+        </div>
+        <!-- Title and content -->
+        <div
+          class="col-11 col-lg-10 mx-auto position-relative mt-n5 mt-sm-n7 mt-md-n8"
+        >
+          <div class="bg-mode shadow rounded-3 p-4">
+            <!-- Badge -->
+            <div class="badge text-bg-success mb-2">Hotel KR Mandap</div>
+            <!-- Title -->
+            <h1 class="fs-3">
+              {{ blog.title }}
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =======================
+Main banner END -->
+
+  <!-- =======================
+Blog content START -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <p>
+            {{ blog.description | safe }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =======================
+Blog content END -->
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+{% endblock content %}

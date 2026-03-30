@@ -19,7 +19,7 @@ Main Banner START -->
               data-dots="false"
               data-items="1"
             >
-            {% for slider in sliders %}
+              {% for slider in sliders %}
               <!-- Card item START -->
               <div
                 class="card overflow-hidden h-400px h-sm-600px rounded-0"
@@ -40,10 +40,10 @@ Main Banner START -->
                           💖 {{ slider.sub_title }}
                         </h6>
                         <!-- Title -->
-                        <h1 class="text-white display-6">
-                          {{ slider.title }}
-                        </h1>
-                        <a href="{% url 'contact' %}" class="btn btn-primary mb-0"
+                        <h1 class="text-white display-6">{{ slider.title }}</h1>
+                        <a
+                          href="{% url 'contact' %}"
+                          class="btn btn-primary mb-0"
                           >Reserve Today</a
                         >
                       </div>
@@ -53,8 +53,6 @@ Main Banner START -->
               </div>
               <!-- Card item END -->
               {% endfor %}
-              
-              
             </div>
           </div>
           <!-- Slider END -->
@@ -72,22 +70,19 @@ About START -->
       <div class="row">
         <div class="col-lg-10 m-auto text-center">
           <h2>{{ about.heading }}</h2>
-          <p class="lead">
-            {{ about.description | safe| truncatewords:69}}
-          </p>
+          <p class="lead">{{ about.description | safe| truncatewords:69}}</p>
 
-          
           <!-- Button and rating -->
           <div class="d-sm-flex justify-content-center align-items-center mt-4">
             <!-- Rating -->
             <div
               class="d-flex justify-content-center align-items-center text-start me-0 me-sm-4"
-            >
-             
-            </div>
+            ></div>
             <!-- Button -->
             <div>
-              <a href="{% url 'about' %}" class="btn btn-lg btn-dark mb-0">Explore now</a>
+              <a href="{% url 'about' %}" class="btn btn-lg btn-dark mb-0"
+                >Explore now</a
+              >
             </div>
           </div>
         </div>
@@ -339,10 +334,8 @@ Hotel grid START -->
           </div>
         </div>
         <!-- Card item END -->
-
       </div>
       <!-- Row END -->
-
     </div>
   </section>
   <!-- =======================
@@ -372,7 +365,7 @@ Special offer START -->
           data-items-md="2"
           data-items-sm="1"
         >
-        {% for offer in offers %}
+          {% for offer in offers %}
 
           <!-- Offer card START -->
           <div>
@@ -402,7 +395,7 @@ Special offer START -->
           </div>
           <!-- Offer card END -->
 
-         {% endfor %}
+          {% endfor %}
         </div>
       </div>
       <!-- Slider END -->
@@ -433,7 +426,7 @@ Services START -->
                   <h6 class="fw-normal mb-0">
                     <i class="fa-solid fa-wifi fa-fw text-primary me-2"></i>Free
                     Wifi
-                  </h6>  
+                  </h6>
                 </li>
 
                 <li class="list-group-item">
@@ -606,69 +599,6 @@ Services START -->
 Services END -->
 
   <!-- =======================
-Action box START -->
-  <section class="py-0 py-md-5">
-    <div class="container">
-      <div
-        class="position-relative rounded-3 overflow-hidden p-3 p-sm-5"
-        style="
-          background-image: url({% static 'assets/images/about/08.jpg' %});
-          background-position: center left;
-          background-size: cover;
-        "
-      >
-        <div class="row position-relative z-index-9">
-          <div class="col-md-7 col-xl-5 ms-auto">
-            <div class="card card-body p-sm-5">
-              <div
-                class="d-sm-flex justify-content-between align-items-center mb-2"
-              >
-                <h6 class="text-primary mb-0">Exclusive Offer</h6>
-                <!-- Rating -->
-                <ul class="list-inline small mb-0">
-                  <li class="list-inline-item me-0">
-                    <i class="fa-solid fa-star text-warning"></i>
-                  </li>
-                  <li class="list-inline-item me-0">
-                    <i class="fa-solid fa-star text-warning"></i>
-                  </li>
-                  <li class="list-inline-item me-0">
-                    <i class="fa-solid fa-star text-warning"></i>
-                  </li>
-                  <li class="list-inline-item me-0">
-                    <i class="fa-solid fa-star text-warning"></i>
-                  </li>
-                  <li class="list-inline-item">
-                    <i class="fa-solid fa-star text-warning"></i>
-                  </li>
-                </ul>
-              </div>
-              <!-- Title -->
-              <h5>Enjoy Your Dream Vacation In Switzerland</h5>
-              <p class="mb-3">
-                Book your hotel with us and don't forget to grab an awesome
-                hotel deal to save massive on your stay.
-              </p>
-
-              <!-- Price -->
-              <h6 class="fw-normal mb-1">2 Days / 3 Nights</h6>
-              <div class="d-flex align-items-center">
-                <h5 class="text-success mb-0 me-1">$750</h5>
-                <span class="mb-0 me-2">/day</span>
-                <span class="text-decoration-line-through">$1000</span>
-              </div>
-              <!-- Button -->
-              <a href="#" class="btn btn-primary-soft mb-0 mt-3">Book Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- =======================
-Action box END -->
-
-  <!-- =======================
 Gallery START -->
   <section>
     <div class="container-fluid">
@@ -693,7 +623,7 @@ Gallery START -->
           data-items-lg="4"
           data-items-sm="2"
         >
-        {% for gallery in images %}
+          {% for gallery in images %}
 
           <!-- Slider item -->
           <div>
@@ -706,11 +636,7 @@ Gallery START -->
                 class="card card-element-hover card-overlay-hover overflow-hidden"
               >
                 <!-- Image -->
-                <img
-                  src="{{ gallery.image.url }}"
-                  class="rounded-3"
-                  alt=""
-                />
+                <img src="{{ gallery.image.url }}" class="rounded-3" alt="" />
                 <!-- Full screen button -->
                 <div class="hover-element w-100 h-100">
                   <i
@@ -721,8 +647,7 @@ Gallery START -->
             </a>
           </div>
 
-         {% endfor %}
-         
+          {% endfor %}
         </div>
       </div>
       <!-- Slider END	 -->
@@ -731,97 +656,78 @@ Gallery START -->
   <!-- =======================
 Gallery END -->
 
-
-
-<!-- =======================
+  <!-- =======================
 Blog START-->
-<section>
-	<div class="container">
-		<!-- Title -->
-		<div class="row mb-3 mb-sm-4">
-			<div class="col-12 text-center">
-				<h2 class="mb-0">Latest Blogs & News</h2>
-			</div>
-		</div>
-		<div class="row g-4 g-xl-5 justify-content-between">
-			<div class="col-md-6">
-				<!-- Card START -->
-				<div class="card bg-transparent">
-					<!-- Image -->
-					<img src="{% static 'assets/images/blog/01.jpg' %}" class="card-img" alt="">
+  <section>
+    <div class="container">
+      <!-- Title -->
+      <div class="row mb-3 mb-sm-4">
+        <div class="col-12 text-center">
+          <h2 class="mb-0">Latest Blogs & News</h2>
+        </div>
+      </div>
 
-					<!-- Card body -->
-					<div class="card-body px-3">
-						<h4><a href="blog-detail.html" class="stretched-link">10 Ways on How to Improve your Hotel Operations</a></h4>
-					</div>
-				</div>
-				<!-- Card END -->
-			</div>
+      <div class="row g-4 g-xl-5 justify-content-between">
+        {% for blog in blogs %} {% if forloop.first %}
+        <!-- First Blog (Large Card) -->
+        <div class="col-md-6">
+          <div class="card bg-transparent">
+            <img
+              src="{{ blog.image_optimized.url }}"
+              class="card-img"
+              alt="{{ blog.title }}"
+            />
 
-			<div class="col-md-6">
-				<!-- Card START -->
-				<div class="card bg-transparent mb-4 mb-md-5">
-					<div class="row align-items-center">
-						<!-- Images -->
-						<div class="col-sm-4">
-							<img src="{% static 'assets/images/blog/02.jpg' %}" class="card-img" alt="">
-						</div>
-						<div class="col-sm-8">
-							<!-- card body -->
-							<div class="card-body p-sm-0">
-								<h5 class="card-title"><a href="blog-detail.html" class="stretched-link">Story of water world adventure</a></h5>
-								<p class="mb-0">Jacqueline Miller</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Card END -->
+            <div class="card-body px-3">
+              <h4>
+                <a
+                  href="{% url 'blog_detail' blog.slug %}"
+                  class="stretched-link"
+                >
+                  {{ blog.title }}
+                </a>
+              </h4>
+            </div>
+          </div>
+        </div>
 
-				<!-- Card START -->
-				<div class="card bg-transparent mb-4 mb-md-5">
-					<div class="row align-items-center">
-						<!-- Images -->
-						<div class="col-sm-4">
-							<img src="{% static 'assets/images/blog/03.jpg' %}" class="card-img" alt="">
-						</div>
-						<div class="col-sm-8">
-							<!-- card body -->
-							<div class="card-body p-sm-0">
-								<h5 class="card-title"><a href="blog-detail.html" class="stretched-link">How Hotel Technology Can Help Small Hotel Businesses</a></h5>
-								<p class="mb-0">Frances Guerrero</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Card END -->
+        <div class="col-md-6">
+          {% else %}
+          <!-- Small Cards -->
+          <div class="card bg-transparent mb-4 mb-md-5">
+            <div class="row align-items-center">
+              <div class="col-sm-4">
+                <img
+                  src="{{ blog.image_optimized.url }}"
+                  class="card-img"
+                  alt="{{ blog.title }}"
+                />
+              </div>
 
-				<!-- Card START -->
-				<div class="card bg-transparent mb-0 mb-md-5">
-					<div class="row align-items-center">
-						<!-- Images -->
-						<div class="col-sm-4">
-							<img src="{% static 'assets/images/blog/04.jpg' %}" class="card-img" alt="">
-						</div>
-						<div class="col-sm-8">
-							<!-- card body -->
-							<div class="card-body p-sm-0">
-								<h5 class="card-title"><a href="blog-detail.html" class="stretched-link">Hotel Service - Become a Guide for Your Guests</a></h5>
-								<p class="mb-0">Louis Ferguson</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Card END -->
-			</div>
-		</div> <!-- Row END -->
-	</div>
-</section>
-<!-- =======================
-Blog START-->
+              <div class="col-sm-8">
+                <div class="card-body p-sm-0">
+                  <h5 class="card-title">
+                    <a
+                      href="{% url 'blog_detail' blog.slug %}"
+                      class="stretched-link"
+                    >
+                      {{ blog.title }}
+                    </a>
+                  </h5>
+                  <p class="mb-0">{{ blog.readtime }} min read</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %} {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =======================
+Blog END -->
 
-
-
- <!-- =======================
+  <!-- =======================
 Faqs START -->
   <section class="pt-0 pt-lg-5">
     <div class="container">
@@ -877,22 +783,27 @@ Faqs START -->
   <!-- =======================
 Faqs END -->
 
-<!-- =======================
+  <!-- =======================
 Client START -->
-<section class="py-0 py-md-5">
-	<div class="container">
-		<div class="row g-4 g-lg-7 justify-content-center align-items-center">
-      {% for ota in otas %}
-			<!-- Image -->
-			<div class="col-5 col-sm-3 col-xl-2">
-				<img src="{{ ota.image_optimized.url  }}" class="" alt="">
-			</div>
-      {% endfor %}
-			
-		</div>
-	</div>
-</section>
-<!-- =======================
+  <section class="py-0 py-md-5">
+    <div class="container">
+      <div class="row g-4 g-lg-7 justify-content-center align-items-center">
+        {% for ota in otas %}
+        <!-- Image -->
+        <div class="col-5 col-sm-3 col-xl-2">
+          {% if ota.link %}
+          <a href="{{ ota.link }}" target="_blank">
+            <img src="{{ ota.image_optimized.url }}" alt="{{ ota.title }}" />
+          </a>
+          {% else %}
+          <img src="{{ ota.image_optimized.url }}" alt="{{ ota.title }}" />
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- =======================
 Client END -->
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
