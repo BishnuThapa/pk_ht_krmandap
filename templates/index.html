@@ -422,74 +422,20 @@ Services START -->
           <div class="row g-sm-4">
             <div class="col-sm-6">
               <ul class="list-group list-group-borderless mt-2 mb-0">
+                {% for facility in facilities %}
                 <li class="list-group-item">
                   <h6 class="fw-normal mb-0">
-                    <i class="fa-solid fa-wifi fa-fw text-primary me-2"></i>Free
-                    Wifi
+                    <i class="fa-solid fa-check fa-fw text-primary me-2"></i>Free
+                    {{ facility.title }}
                   </h6>
                 </li>
+                {% endfor %}
 
-                <li class="list-group-item">
-                  <h6 class="fw-normal mb-0">
-                    <i
-                      class="fa-solid fa-person-swimming fa-fw text-primary me-2"
-                    ></i
-                    >Swimming Pool
-                  </h6>
-                </li>
-
-                <li class="list-group-item">
-                  <h6 class="fw-normal mb-0">
-                    <i
-                      class="fa-solid fa-person-shelter fa-fw text-primary me-2"
-                    ></i
-                    >Private Workshop
-                  </h6>
-                </li>
-
-                <li class="list-group-item">
-                  <h6 class="fw-normal mb-0">
-                    <i class="fa-solid fa-utensils fa-fw text-primary me-2"></i
-                    >Breakfast
-                  </h6>
-                </li>
+                
               </ul>
             </div>
 
-            <div class="col-sm-6">
-              <ul class="list-group list-group-borderless">
-                <li class="list-group-item">
-                  <h6 class="fw-normal mb-0">
-                    <i class="fa-solid fa-bolt fa-fw text-primary me-2"></i>Free
-                    Electricity
-                  </h6>
-                </li>
-
-                <li class="list-group-item">
-                  <h6 class="fw-normal mb-0">
-                    <i class="fa-solid fa-dumbbell fa-fw text-primary me-2"></i
-                    >Gym Space
-                  </h6>
-                </li>
-
-                <li class="list-group-item">
-                  <h6 class="fw-normal mb-0">
-                    <i class="fa-solid fa-spa fa-fw text-primary me-2"></i>Spa
-                  </h6>
-                </li>
-
-                <li class="list-group-item">
-                  <h6 class="fw-normal mb-0">
-                    <a href="#"
-                      ><i
-                        class="fa-solid fa-ellipsis fa-fw text-primary me-2"
-                      ></i
-                      >Other Services</a
-                    >
-                  </h6>
-                </li>
-              </ul>
-            </div>
+            
           </div>
         </div>
 
@@ -506,25 +452,26 @@ Services START -->
                 data-items-xl="1"
                 data-items-md="1"
               >
+              {% for attraction in attractions %}
                 <!-- Card START -->
                 <div class="card bg-transparent">
                   <div class="row g-4 align-items-center">
                     <div class="col-sm-6">
                       <img
-                        src="{% static 'assets/images/category/flight/02.jpg' %}"
+                        src="{{ attraction.image.url }}"
                         class="img-fluid card-img"
-                        alt="..."
+                        alt="{{ attraction.title }}"
                       />
                     </div>
                     <div class="col-sm-6">
                       <div class="card-body p-0">
-                        <h6 class="fw-normal mb-3">Honeymoon Sweets</h6>
-                        <h4 class="card-title mb-3">
+                        
+                        <h6 class="card-title mb-3">
                           <a href="#" class="stretched-link"
-                            >Maldives Sunshine Hotel</a
+                            >{{ attraction.title }}</a
                           >
-                        </h4>
-                        <a href="#" class="btn btn-link p-0"
+                        </h6>
+                        <a href="mailto:{{ company_info.email}}" class="btn btn-link p-0"
                           >Explore Now <i class="bi bi-arrow-right"></i
                         ></a>
                       </div>
@@ -532,60 +479,7 @@ Services START -->
                   </div>
                 </div>
                 <!-- Card END -->
-
-                <!-- Card START -->
-                <div class="card bg-transparent">
-                  <div class="row g-4 align-items-center">
-                    <div class="col-sm-6">
-                      <img
-                        src="{% static 'assets/images/category/flight/01.jpg' %}"
-                        class="img-fluid card-img"
-                        alt="..."
-                      />
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="card-body p-0">
-                        <h6 class="fw-normal mb-3">Royal Stay</h6>
-                        <h4 class="card-title mb-3">
-                          <a href="#" class="stretched-link"
-                            >Booking Grad Palace Japan</a
-                          >
-                        </h4>
-                        <a href="#" class="btn btn-link p-0"
-                          >Explore Now <i class="bi bi-arrow-right"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card END -->
-
-                <!-- Card START -->
-                <div class="card bg-transparent">
-                  <div class="row g-4 align-items-center">
-                    <div class="col-sm-6">
-                      <img
-                        src="{% static 'assets/images/category/flight/03.jpg' %}"
-                        class="img-fluid card-img"
-                        alt="..."
-                      />
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="card-body p-0">
-                        <h6 class="fw-normal mb-3">Adventure Stay</h6>
-                        <h4 class="card-title mb-3">
-                          <a href="#" class="stretched-link"
-                            >Golf & Spa Resort in New York</a
-                          >
-                        </h4>
-                        <a href="#" class="btn btn-link p-0"
-                          >Explore Now <i class="bi bi-arrow-right"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card END -->
+              {% endfor %}
               </div>
             </div>
             <!-- Slider END -->

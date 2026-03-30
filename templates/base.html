@@ -323,18 +323,24 @@ Footer START -->
             <h5 class="text-white mb-2 mb-md-4">About</h5>
             <ul class="nav flex-column text-primary-hover">
               <li class="nav-item">
-                <a class="nav-link text-body-secondary" href="#">About us</a>
+                <a class="nav-link text-body-secondary" href="{% url 'about'%}">About us</a>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link text-body-secondary" href="#">Contact us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-body-secondary" href="#"
-                  >News and Blog</a
+                <a class="nav-link text-body-secondary" href="{% url 'offer' %}"
+                  >Offers</a
                 >
+              </li><li class="nav-item">
+                <a class="nav-link text-body-secondary" href="{% url 'gallery'%}">Gallery</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-body-secondary" href="#">Meet a Team</a>
+                <a class="nav-link text-body-secondary" href="{% url 'attraction'%}">Attractions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-body-secondary" href="{% url 'blog'%}">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-body-secondary" href="{% url 'contact' %}">Contact us</a>
               </li>
             </ul>
           </div>
