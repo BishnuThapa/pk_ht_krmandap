@@ -90,11 +90,11 @@ def offer(request):
     return render(request, 'offer.html',context)
 
 def rooms(request):
-    # rooms=Room.objects.all().order_by('ordering')
-    # context={
-    #     'rooms':rooms
-    #     }
-    return render(request, 'rooms.html')
+    rooms=Room.objects.all()
+    context={
+        'rooms':rooms
+        }
+    return render(request, 'rooms.html',context)
 
 def room_detail(request, slug):
     room = get_object_or_404(Room, slug=slug)

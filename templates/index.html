@@ -135,7 +135,7 @@ Hotel grid START -->
 
               <!-- Title -->
               <h5 class="card-title">
-                <a href="hotel-detail.html">{{ room.title}}</a>
+                <a href="{% url 'room-detail' room.slug %}">{{ room.title}}</a>
               </h5>
 
               <div class="row">
@@ -170,7 +170,7 @@ Hotel grid START -->
                 <!-- Button -->
                 <div class="mt-2 mt-sm-0">
                   <a
-                    href="hotel-detail.html"
+                    href="{% url 'room-detail' room.slug %}"
                     class="btn btn-sm btn-primary-soft mb-0 w-100"
                     >View Detail<i class="bi bi-arrow-right ms-2"></i
                   ></a>

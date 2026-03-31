@@ -193,7 +193,9 @@
                         class="dropdown-menu"
                         aria-labelledby="pagesFacilities"
                       >
-                        <li><a class="dropdown-item" href="#">Banquet</a></li>
+                        {% for room in rooms %}
+                        <li><a class="dropdown-item" href="{% url 'room-detail' room.slug %}">{{ room.title }}</a></li>
+                        {% endfor %}
                       </ul>
                     </li>
                     <li class="nav-item">
@@ -323,24 +325,41 @@ Footer START -->
             <h5 class="text-white mb-2 mb-md-4">About</h5>
             <ul class="nav flex-column text-primary-hover">
               <li class="nav-item">
-                <a class="nav-link text-body-secondary" href="{% url 'about'%}">About us</a>
+                <a class="nav-link text-body-secondary" href="{% url 'about'%}"
+                  >About us</a
+                >
               </li>
-              
+
               <li class="nav-item">
                 <a class="nav-link text-body-secondary" href="{% url 'offer' %}"
                   >Offers</a
                 >
-              </li><li class="nav-item">
-                <a class="nav-link text-body-secondary" href="{% url 'gallery'%}">Gallery</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-body-secondary" href="{% url 'attraction'%}">Attractions</a>
+                <a
+                  class="nav-link text-body-secondary"
+                  href="{% url 'gallery'%}"
+                  >Gallery</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-body-secondary" href="{% url 'blog'%}">Blogs</a>
+                <a
+                  class="nav-link text-body-secondary"
+                  href="{% url 'attraction'%}"
+                  >Attractions</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-body-secondary" href="{% url 'contact' %}">Contact us</a>
+                <a class="nav-link text-body-secondary" href="{% url 'blog'%}"
+                  >Blogs</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-body-secondary"
+                  href="{% url 'contact' %}"
+                  >Contact us</a
+                >
               </li>
             </ul>
           </div>
@@ -351,10 +370,13 @@ Footer START -->
             <ul class="nav flex-column text-primary-hover">
               {% for page in pages %}
               <li class="nav-item">
-                <a class="nav-link text-body-secondary" href="{% url 'page-detail' page.slug %}">{{ page.title }}</a>
+                <a
+                  class="nav-link text-body-secondary"
+                  href="{% url 'page-detail' page.slug %}"
+                  >{{ page.title }}</a
+                >
               </li>
               {% endfor %}
-              
             </ul>
           </div>
 
@@ -435,44 +457,55 @@ Footer START -->
             <ul class="list-inline mb-0 mt-3">
               {% if social_links.facebook_link %}
               <li class="list-inline-item">
-                <a class="btn btn-sm px-2 bg-facebook mb-0" href="{{ social_links.facebook_link}}" target="_blank"
+                <a
+                  class="btn btn-sm px-2 bg-facebook mb-0"
+                  href="{{ social_links.facebook_link}}"
+                  target="_blank"
                   ><i class="fab fa-fw fa-facebook-f"></i
                 ></a>
               </li>
-               {% endif %}
-                {% if social_links.twitter_link %}
+              {% endif %} {% if social_links.twitter_link %}
               <li class="list-inline-item">
-                <a class="btn btn-sm shadow px-2 bg-twitter mb-0" href="{{ social_links.twitter_link}}" target="_blank"
+                <a
+                  class="btn btn-sm shadow px-2 bg-twitter mb-0"
+                  href="{{ social_links.twitter_link}}"
+                  target="_blank"
                   ><i class="fab fa-fw fa-twitter"></i
                 ></a>
               </li>
-                {% endif %}
-               
-                {% if social_links.youtube_link %}
+              {% endif %} {% if social_links.youtube_link %}
               <li class="list-inline-item">
-                <a class="btn btn-sm shadow px-2 bg-youtube mb-0" href="{{ social_links.youtube_link}}" target="_blank"
+                <a
+                  class="btn btn-sm shadow px-2 bg-youtube mb-0"
+                  href="{{ social_links.youtube_link}}"
+                  target="_blank"
                   ><i class="fab fa-fw fa-youtube"></i
                 ></a>
               </li>
-              {% endif %}
-                {% if social_links.instagram_link %}
+              {% endif %} {% if social_links.instagram_link %}
               <li class="list-inline-item">
-                <a class="btn btn-sm shadow px-2 bg-instagram mb-0" href="{{ social_links.instagram_link}}" target="_blank"
+                <a
+                  class="btn btn-sm shadow px-2 bg-instagram mb-0"
+                  href="{{ social_links.instagram_link}}"
+                  target="_blank"
                   ><i class="fab fa-fw fa-instagram"></i
                 ></a>
               </li>
-              {% endif %}
-              
-              {% if social_links.linkedin_link %}
+              {% endif %} {% if social_links.linkedin_link %}
               <li class="list-inline-item">
-                <a class="btn btn-sm shadow px-2 bg-linkedin mb-0" href="{{ social_links.linkedin_link}}" target="_blank"
+                <a
+                  class="btn btn-sm shadow px-2 bg-linkedin mb-0"
+                  href="{{ social_links.linkedin_link}}"
+                  target="_blank"
                   ><i class="fab fa-fw fa-linkedin-in"></i
                 ></a>
               </li>
-              {% endif %}
-              {% if social_links.tiktok_link %}
+              {% endif %} {% if social_links.tiktok_link %}
               <li class="list-inline-item">
-                <a class="btn btn-sm shadow px-2 bg-tiktok mb-0" href="{{ social_links.tiktok_link}}" target="_blank"
+                <a
+                  class="btn btn-sm shadow px-2 bg-tiktok mb-0"
+                  href="{{ social_links.tiktok_link}}"
+                  target="_blank"
                   ><i class="fab fa-fw fa-tiktok"></i
                 ></a>
               </li>
