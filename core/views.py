@@ -22,7 +22,7 @@ def index(request):
     attractions = Attraction.objects.all().order_by('ordering')
     offers=Offer.objects.filter(is_active=True).order_by('ordering')
     images = Gallery.objects.all().order_by('ordering')
-    # room = Room.objects.first()
+    room = Room.objects.filter(is_active=True)
     otas=OTA.objects.filter(is_active=True).order_by('ordering')
     blogs=Blog.objects.filter(is_active=True).order_by('-created_at')[:4]
 
@@ -34,7 +34,7 @@ def index(request):
         'offers':offers,
         'attractions': attractions,
         'images': images,
-        # 'room': room,
+        'room': room,
         'otas': otas,
         'blogs': blogs,
     }

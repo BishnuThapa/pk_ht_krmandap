@@ -104,14 +104,10 @@ Hotel grid START -->
         </div>
       </div>
       <div class="row g-4">
+        {% for room in rooms %}
         <!-- Card item START -->
         <div class="col-md-6 col-xl-4">
           <div class="card shadow p-2 pb-0 h-100">
-            <!-- Overlay item -->
-            <div class="position-absolute top-0 start-0 z-index-1 m-4">
-              <div class="badge bg-danger text-white">30% Off</div>
-            </div>
-
             <!-- Slider START -->
             <div
               class="tiny-slider arrow-round arrow-xs arrow-dark rounded-2 overflow-hidden"
@@ -123,37 +119,12 @@ Hotel grid START -->
                 data-dots="false"
                 data-items="1"
               >
+                {% for image in room.roomgallery_set.all|slice:":4" %}
                 <!-- Image item -->
                 <div>
-                  <img
-                    src="{% static 'assets/images/category/hotel/4by3/09.jpg'%}"
-                    alt="Card image"
-                  />
+                  <img src="{{ image.image_optimized.url }}" alt="Card image" />
                 </div>
-
-                <!-- Image item -->
-                <div>
-                  <img
-                    src="{% static 'assets/images/category/hotel/4by3/02.jpg'%}"
-                    alt="Card image"
-                  />
-                </div>
-
-                <!-- Image item -->
-                <div>
-                  <img
-                    src="{% static 'assets/images/category/hotel/4by3/03.jpg'%}"
-                    alt="Card image"
-                  />
-                </div>
-
-                <!-- Image item -->
-                <div>
-                  <img
-                    src="{% static 'assets/images/category/hotel/4by3/01.jpg'%}"
-                    alt="Card image"
-                  />
-                </div>
+                {% endfor %}
               </div>
             </div>
             <!-- Slider END -->
@@ -161,27 +132,22 @@ Hotel grid START -->
             <!-- Card body START -->
             <div class="card-body px-3 pb-0">
               <!-- Rating and cart -->
-              <div class="d-flex justify-content-between mb-3">
-                <a href="#" class="badge bg-dark text-white"
-                  ><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.5</a
-                >
-                <a href="#" class="h6 mb-0 z-index-2"
-                  ><i class="bi fa-fw bi-bookmark"></i
-                ></a>
-              </div>
 
               <!-- Title -->
               <h5 class="card-title">
-                <a href="hotel-detail.html">Hotel Baljees Regency</a>
+                <a href="hotel-detail.html">{{ room.title}}</a>
               </h5>
 
-              <!-- List -->
-              <ul class="nav nav-divider mb-2 mb-sm-3">
-                <li class="nav-item">Air Conditioning</li>
-                <li class="nav-item">Wifi</li>
-                <li class="nav-item">Kitchen</li>
-                <li class="nav-item">Pool</li>
-              </ul>
+              <div class="row">
+                {% for amenity in room.amenities.all %}
+                <div class="col-6 mb-2">
+                  <div class="d-flex align-items-center text-dark">
+                    <i class="fa-solid fa-check text-dark me-2"></i>
+                    {{ amenity.ammenity_name }}
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
             </div>
             <!-- Card body END -->
 
@@ -193,9 +159,13 @@ Hotel grid START -->
               >
                 <!-- Price -->
                 <div class="d-flex align-items-center">
-                  <h5 class="fw-normal text-success mb-0 me-1">$750</h5>
-                  <span class="mb-0 me-2">/day</span>
-                  <span class="text-decoration-line-through">$1000</span>
+                  <h5 class="fw-normal text-success mb-0 me-1">
+                    ${{room.price_per_night}}
+                  </h5>
+                  <span class="mb-0 me-2">/night</span>
+                  <span class="text-decoration-line-through"
+                    >${{ room.original_price_per_night}}</span
+                  >
                 </div>
                 <!-- Button -->
                 <div class="mt-2 mt-sm-0">
@@ -211,129 +181,7 @@ Hotel grid START -->
         </div>
         <!-- Card item END -->
 
-        <!-- Card item START -->
-        <div class="col-md-6 col-xl-4">
-          <div class="card shadow p-2 pb-0 h-100">
-            <!-- Image -->
-            <img
-              src="{% static 'assets/images/category/hotel/4by3/10.jpg'%}"
-              class="rounded-2"
-              alt="Card image"
-            />
-
-            <!-- Card body START -->
-            <div class="card-body px-3 pb-0">
-              <!-- Rating and cart -->
-              <div class="d-flex justify-content-between mb-3">
-                <a href="#" class="badge bg-dark text-white"
-                  ><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.0</a
-                >
-                <a href="#" class="h6 mb-0 z-index-2"
-                  ><i class="bi fa-fw bi-bookmark"></i
-                ></a>
-              </div>
-
-              <!-- Title -->
-              <h5 class="card-title">
-                <a href="hotel-detail.html">Courtyard by Marriott New York </a>
-              </h5>
-
-              <!-- List -->
-              <ul class="nav nav-divider mb-2 mb-sm-3">
-                <li class="nav-item">Air Conditioning</li>
-                <li class="nav-item">Wifi</li>
-                <li class="nav-item">Pool</li>
-                <li class="nav-item">More+</li>
-              </ul>
-            </div>
-            <!-- Card body END -->
-
-            <!-- Card footer START-->
-            <div class="card-footer pt-0">
-              <!-- Price and Button -->
-              <div
-                class="d-sm-flex justify-content-sm-between align-items-center"
-              >
-                <!-- Price -->
-                <div class="d-flex align-items-center">
-                  <h5 class="fw-normal text-success mb-0 me-1">$1200</h5>
-                  <span class="mb-0 me-2">/day</span>
-                </div>
-                <!-- Button -->
-                <div class="mt-2 mt-sm-0 z-index-2">
-                  <a
-                    href="hotel-detail.html"
-                    class="btn btn-sm btn-primary-soft mb-0 w-100"
-                    >View Detail<i class="bi bi-arrow-right ms-2"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Card item END -->
-
-        <!-- Card item START -->
-        <div class="col-md-6 col-xl-4">
-          <div class="card shadow p-2 pb-0 h-100">
-            <!-- Image -->
-            <img
-              src="{% static 'assets/images/category/hotel/4by3/08.jpg' %}"
-              class="rounded-2"
-              alt="Card image"
-            />
-
-            <!-- Card body START -->
-            <div class="card-body px-3 pb-0">
-              <!-- Rating and cart -->
-              <div class="d-flex justify-content-between mb-3">
-                <a href="#" class="badge bg-dark text-white"
-                  ><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.8</a
-                >
-                <a href="#" class="h6 mb-0 z-index-2"
-                  ><i class="bi fa-fw bi-bookmark-fill text-danger"></i
-                ></a>
-              </div>
-
-              <!-- Title -->
-              <h5 class="card-title">
-                <a href="hotel-detail.html">Club Quarters Hotel</a>
-              </h5>
-
-              <!-- List -->
-              <ul class="nav nav-divider mb-2 mb-sm-3">
-                <li class="nav-item">Air Conditioning</li>
-                <li class="nav-item">Wifi</li>
-                <li class="nav-item">Kitchen</li>
-                <li class="nav-item">Pool</li>
-              </ul>
-            </div>
-            <!-- Card body END -->
-
-            <!-- Card footer START-->
-            <div class="card-footer pt-0">
-              <!-- Price and Button -->
-              <div
-                class="d-sm-flex justify-content-sm-between align-items-center"
-              >
-                <!-- Price -->
-                <div class="d-flex align-items-center">
-                  <h5 class="fw-normal text-success mb-0 me-1">$980</h5>
-                  <span class="mb-0 me-2">/day</span>
-                </div>
-                <!-- Button -->
-                <div class="mt-2 mt-sm-0 z-index-2">
-                  <a
-                    href="hotel-detail.html"
-                    class="btn btn-sm btn-primary-soft mb-0 w-100"
-                    >View Detail<i class="bi bi-arrow-right ms-2"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Card item END -->
+        {% endfor %}
       </div>
       <!-- Row END -->
     </div>
@@ -425,17 +273,13 @@ Services START -->
                 {% for facility in facilities %}
                 <li class="list-group-item">
                   <h6 class="fw-normal mb-0">
-                    <i class="fa-solid fa-check fa-fw text-primary me-2"></i>Free
-                    {{ facility.title }}
+                    <i class="fa-solid fa-check fa-fw text-primary me-2"></i
+                    >Free {{ facility.title }}
                   </h6>
                 </li>
                 {% endfor %}
-
-                
               </ul>
             </div>
-
-            
           </div>
         </div>
 
@@ -452,7 +296,7 @@ Services START -->
                 data-items-xl="1"
                 data-items-md="1"
               >
-              {% for attraction in attractions %}
+                {% for attraction in attractions %}
                 <!-- Card START -->
                 <div class="card bg-transparent">
                   <div class="row g-4 align-items-center">
@@ -465,13 +309,14 @@ Services START -->
                     </div>
                     <div class="col-sm-6">
                       <div class="card-body p-0">
-                        
                         <h6 class="card-title mb-3">
                           <a href="#" class="stretched-link"
                             >{{ attraction.title }}</a
                           >
                         </h6>
-                        <a href="mailto:{{ company_info.email}}" class="btn btn-link p-0"
+                        <a
+                          href="mailto:{{ company_info.email}}"
+                          class="btn btn-link p-0"
                           >Explore Now <i class="bi bi-arrow-right"></i
                         ></a>
                       </div>
@@ -479,7 +324,7 @@ Services START -->
                   </div>
                 </div>
                 <!-- Card END -->
-              {% endfor %}
+                {% endfor %}
               </div>
             </div>
             <!-- Slider END -->
