@@ -1,4 +1,274 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+  <!-- =======================
+
+
+  <!-- =======================
+Main Title START -->
+  <section class="py-0 pt-sm-5">
+    <div class="container position-relative">
+      <!-- Title and button START -->
+      <div class="row mb-3">
+        <div class="col-12">
+          <!-- Meta -->
+          <div class="d-lg-flex justify-content-lg-between mb-1">
+            <!-- Title -->
+            <div class="mb-2 mb-lg-0">
+              <h1 class="fs-2">{{ room.title }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Title and button END -->
+    </div>
+  </section>
+  <!-- =======================
+Main Title END -->
+
+  <!-- =======================
+Image gallery START -->
+  <!-- =======================
+Image gallery START -->
+  <section class="card-grid pt-0">
+    <div class="container">
+      <div class="row g-2">
+        {% with gallery_images as imgs %}
+
+        <!-- Main Large Image -->
+        {% if imgs|length > 0 %}
+        <div class="col-md-6">
+          <a
+            data-glightbox
+            data-gallery="gallery"
+            href="{{ imgs.0.image.url }}"
+          >
+            <div
+              class="card card-grid-lg card-element-hover card-overlay-hover overflow-hidden"
+              style="background-image: url('{{ imgs.0.image.url }}'); background-position: center; background-size: cover;"
+            >
+              <div class="hover-element position-absolute w-100 h-100">
+                <i
+                  class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                ></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endif %}
+
+        <!-- Right Side Grid -->
+        <div class="col-md-6">
+          <div class="row g-2">
+            <!-- Second Image -->
+            {% if imgs|length > 1 %}
+            <div class="col-12">
+              <a
+                data-glightbox
+                data-gallery="gallery"
+                href="{{ imgs.1.image.url }}"
+              >
+                <div
+                  class="card card-grid-sm card-element-hover card-overlay-hover overflow-hidden"
+                  style="background-image: url('{{ imgs.1.image.url }}'); background-position: center; background-size: cover;"
+                >
+                  <div class="hover-element position-absolute w-100 h-100">
+                    <i
+                      class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endif %}
+
+            <!-- Third Image -->
+            {% if imgs|length > 2 %}
+            <div class="col-md-6">
+              <a
+                data-glightbox
+                data-gallery="gallery"
+                href="{{ imgs.2.image.url }}"
+              >
+                <div
+                  class="card card-grid-sm card-element-hover card-overlay-hover overflow-hidden"
+                  style="background-image: url('{{ imgs.2.image.url }}'); background-position: center; background-size: cover;"
+                >
+                  <div class="hover-element position-absolute w-100 h-100">
+                    <i
+                      class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endif %}
+
+            <!-- View All / Remaining Images -->
+            {% if imgs|length > 3 %}
+            <div class="col-md-6">
+              <div
+                class="card card-grid-sm overflow-hidden"
+                style="background-image: url('{{ imgs.3.image.url }}'); background-position: center; background-size: cover;"
+              >
+                <div class="bg-overlay bg-dark opacity-7"></div>
+
+                <!-- Popup Images -->
+                <a
+                  data-glightbox
+                  data-gallery="gallery"
+                  href="{{ imgs.3.image.url }}"
+                  class="stretched-link z-index-9"
+                ></a>
+
+                {% for img in imgs|slice:"4:" %}
+                <a
+                  data-glightbox
+                  data-gallery="gallery"
+                  href="{{ img.image.url }}"
+                ></a>
+                {% endfor %}
+
+                <!-- Overlay text -->
+                <div class="card-img-overlay d-flex h-100 w-100">
+                  <h6
+                    class="card-title m-auto fw-light text-decoration-underline"
+                  >
+                    <a href="#" class="text-white">View all</a>
+                  </h6>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+        {% endwith %}
+      </div>
+    </div>
+  </section>
+  <!-- =======================
+Image gallery END -->
+  <!-- =======================
+Image gallery END -->
+
+  <!-- =======================
+About hotel START -->
+  <section class="pt-0">
+    <div class="container" data-sticky-container>
+      <div class="row g-4 g-xl-5">
+        <!-- Content START -->
+        <div class="col-xl-7 order-1">
+          <div class="vstack gap-5">
+            <!-- About hotel START -->
+            <div class="card bg-transparent">
+              <!-- Card header -->
+              <div class="card-header border-bottom bg-transparent px-0 pt-0">
+                <h3 class="mb-0">{{ room.title }}</h3>
+              </div>
+
+              <!-- Card body START -->
+              <div class="card-body pt-4 p-0">
+                <h5 class="fw-light mb-4">Main Highlights</h5>
+
+                <p class="mb-3">{{ room.description | safe }}</p>
+              </div>
+              <!-- Card body END -->
+            </div>
+            <!-- About hotel START -->
+
+            <!-- Amenities START -->
+            <div class="card bg-transparent">
+              <!-- Card header -->
+              <div class="card-header border-bottom bg-transparent px-0 pt-0">
+                <h3 class="card-title mb-0">Amenities</h3>
+              </div>
+
+              <!-- Card body START -->
+              <div class="card-body pt-4 p-0">
+                <div class="row g-4">
+                  <!-- Services -->
+                  <div class="col-sm-6">
+                    <h6>
+                      <i class="fa-solid fa-concierge-bell me-2"></i>Facilities
+                    </h6>
+                    <!-- List -->
+                    <ul class="list-group list-group-borderless mt-2 mb-0">
+                      {% for amenity in room.amenities.all %}
+
+                      <li class="list-group-item pb-0">
+                        <i
+                          class="fa-solid fa-check-circle text-success me-2"
+                        ></i
+                        >{{amenity.ammenity_name}}
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Card body END -->
+            </div>
+            <!-- Amenities END -->
+          </div>
+        </div>
+        <!-- Content END -->
+
+        <!-- Right side content START -->
+        <aside class="col-xl-5 order-xl-2">
+          <div data-sticky data-margin-top="100" data-sticky-for="1199">
+            <!-- Book now START -->
+            <div class="card card-body border">
+              <!-- Title -->
+              <div
+                class="d-sm-flex justify-content-sm-between align-items-center mb-3"
+              >
+                <div>
+                  <span>Price Start at</span>
+                  <h4 class="card-title mb-0">${{ room.price_per_night}}</h4>
+                </div>
+                <div>
+                  <h6 class="fw-normal mb-0">1 room per night</h6>
+                  <small>Tax Inclusive</small>
+                </div>
+              </div>
+
+              <!-- Rating -->
+
+              <p class="h6 fw-light mb-4">
+                <i class="bi bi-arrow-right me-2"></i>Free breakfast available
+              </p>
+              <form action="{% url 'room-booking' %}" method="GET">
+                {% csrf_token %}
+                <input name="id" type="hidden" value="{{room.id}}" />
+                <input
+                  name="price_per_night"
+                  type="hidden"
+                  value="{{room.price_per_night}}"
+                />
+                <input name="room" type="hidden" value="{{room.title}}" />
+                <!-- Button -->
+                <div class="d-grid">
+                  <button
+                    type="submit"
+                    class="btn btn-lg btn-primary-soft mb-0"
+                    >Book Now</button
+                  >
+                </div>
+              </form>
+            </div>
+            <!-- Book now END -->
+          </div>
+        </aside>
+        <!-- Right side content END -->
+      </div>
+      <!-- Row END -->
+    </div>
+  </section>
+  <!-- =======================
+About hotel END -->
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
 
 {% endblock content %}

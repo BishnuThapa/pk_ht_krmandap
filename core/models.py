@@ -98,3 +98,42 @@ class RoomGallery(models.Model):
         format='WEBP',
         options={'quality': 80}
     )
+
+
+
+class Booking(models.Model):
+    booking_id = models.PositiveIntegerField(
+        unique=True, blank=True, null=True)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    no_of_rooms = models.CharField(max_length=100,default=1)
+    adults = models.CharField(max_length=100,default=2)
+    check_in_date = models.DateField()
+    check_out_date = models.DateField()
+    guest_name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100,null=True, blank=True)
+    email = models.EmailField(max_length=100,null=True, blank=True)
+    special_request = models.TextField(null=True, blank=True)
+    total_pricing=models.CharField(max_length=100, null=True, blank=True)
+
+   
+    booked_at = models.DateTimeField(default=timezone.now)
+
+    def save(self, *args, **kwargs):
+        if not self.booking_id:
+            # Get the last booking entry and increment the booking_id
+            last_booking = Booking.objects.order_by('booking_id').last()
+            if last_booking:
+                self.booking_id = last_booking.booking_id + 1
+            else:
+                self.booking_id = 1000  # Start from 1000 if no booking exists
+
+        super(Booking, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return f"Booking #{self.booking_id} - {self.customer_name}"
+    def __str__(self):
+        return f"Booking for {self.guest_name}"
+
+    class Meta:
+        verbose_name = 'Room Booking'
+        verbose_name_plural = 'Room Booking'

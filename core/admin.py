@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Amenities, Room,RoomGallery
+from .models import Amenities, Room,RoomGallery,Booking
 from django.contrib.admin import ModelAdmin, StackedInline
 # Register your models here.
 from django.forms import CheckboxSelectMultiple
@@ -38,3 +38,9 @@ class RoomAdmin(admin.ModelAdmin):
                 obj.image.url
             )
         return "—"
+
+
+@admin.register(Booking)
+class RoomBookingAdmin(admin.ModelAdmin):
+    list_display = ('booking_id', 'guest_name', 'adults', 'check_in_date',
+                    'check_out_date', 'booked_at')

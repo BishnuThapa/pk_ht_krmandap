@@ -1,0 +1,301 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+  <!-- =======================
+Page banner START -->
+  <section class="py-0">
+    <div class="container">
+      <!-- Card START -->
+      <div class="card bg-light overflow-hidden px-sm-5">
+        <div class="row align-items-center g-4">
+          <!-- Content -->
+          <div class="col-sm-9">
+            <div class="card-body">
+              <!-- Breadcrumb -->
+
+              <!-- Title -->
+              <h1 class="m-0 h2 card-title">Review your Booking</h1>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div class="col-sm-3 text-end d-none d-sm-block">
+            <img src="{% static 'assets/images/element/17.svg'%}" class="mb-n4" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- Card END -->
+    </div>
+  </section>
+  <!-- =======================
+Page banner END -->
+
+  <!-- =======================
+Page content START -->
+  <section>
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <!-- Left side content START -->
+        <div class="col-xl-8 mx-auto">
+          <div class="vstack gap-5">
+            <!-- Guest detail START -->
+            <div class="card shadow">
+              <!-- Card header -->
+              <div class="card-header border-bottom p-4">
+                <h4 class="card-title mb-0">
+                  <i class="bi bi-people-fill me-2"></i>Guest Details
+                </h4>
+              </div>
+
+              <!-- Card body START -->
+              <!-- Card body START -->
+              <div class="card-body p-4">
+                <form method="post" autocomplete="off">
+                  {% csrf_token %}
+
+                  <!-- Title -->
+                  <div class="col-12 mb-3">
+                    <div class="bg-light rounded-2 px-4 py-3">
+                      <h6 class="mb-0">Booking Details</h6>
+                    </div>
+                  </div>
+
+                  <!-- Choose Room -->
+                  <div class="mb-3">
+                    <label class="form-label">Choose Room</label>
+
+                    {% if room and id and price_per_night %}
+                    <select
+                      class="form-select"
+                      name="room"
+                      id="room-select"
+                      onchange="updateRoomPrice()"
+                    >
+                      <option
+                        value="{{ id }}"
+                        data-price="{{ price_per_night }}"
+                      >
+                        {{ room }}
+                      </option>
+                    </select>
+                    <input type="hidden" name="room" value="{{ id }}" />
+                    {% else %}
+                    <select
+                      class="form-select"
+                      name="room"
+                      id="room-select"
+                      onchange="updateRoomPrice()"
+                      required
+                    >
+                      <option value="">Select your room</option>
+                      {% for room in rooms %}
+                      <option
+                        value="{{ room.id }}"
+                        data-price="{{ room.price_per_night }}"
+                      >
+                        {{ room.title }}
+                      </option>
+                      {% endfor %}
+                    </select>
+                    {% endif %}
+                  </div>
+
+                  <!-- Check-in / Check-out -->
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <label class="form-label">Check-In</label>
+                      <input
+                        type="date"
+                        name="checkin"
+                        class="form-control"
+                        id="txtDate"
+                        oninput="updatePricing()"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label">Check-Out</label>
+                      <input
+                        type="date"
+                        name="checkout"
+                        class="form-control"
+                        id="txtDate1"
+                        oninput="updatePricing()"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Rooms + Pricing -->
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <label class="form-label">Rooms</label>
+                      <input
+                        type="number"
+                        name="no_of_rooms"
+                        class="form-control"
+                        value="1"
+                        min="1"
+                        id="no_of_rooms"
+                        oninput="updatePricing()"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label">Total Price</label>
+                      <input
+                        type="text"
+                        name="pricing"
+                        id="pricing"
+                        class="form-control"
+                        value="{% if price_per_night %}{{ price_per_night }}{% else %}0{% endif %}"
+                        readonly
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Guest Info -->
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <label class="form-label">Adults</label>
+                      <input
+                        type="number"
+                        name="adults"
+                        class="form-control"
+                        value="2"
+                        min="1"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label">Full Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        placeholder="John Steven"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label">Phone</label>
+                      <input
+                        type="text"
+                        name="phone"
+                        class="form-control"
+                        placeholder="+977-XXXXXXXXXX"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label class="form-label">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="email@domain.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Special Request -->
+                  <div class="mb-3">
+                    <label class="form-label">Special Request</label>
+                    <textarea
+                      name="message"
+                      class="form-control"
+                      rows="4"
+                      placeholder="Special request"
+                    ></textarea>
+                  </div>
+
+                  <!-- CAPTCHA -->
+                  <div class="mb-3">
+                    <div
+                      class="g-recaptcha"
+                      data-sitekey="6LeumDwqAAAAALBi188YPFaSudP9XDdLv-60xfa1"
+                    ></div>
+                  </div>
+
+                  <!-- Submit -->
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-4"
+                  >
+                    <h5 class="mb-0">
+                        {% if price_per_night %}{{ price_per_night }}
+                        {% else %}0{% endif %} / night
+                        </h5>
+
+                    <button type="submit" class="btn btn-primary">
+                      Book Now
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- Card body END -->
+              <!-- Card body END -->
+            </div>
+            <!-- Guest detail END -->
+
+           
+          </div>
+        </div>
+        <!-- Left side content END -->
+
+      </div>
+      <!-- Row END -->
+    </div>
+  </section>
+  <!-- =======================
+Page content START -->
+
+  <script>
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1); // Set tomorrow's date
+
+    // Format dates to YYYY-MM-DD format
+    const formattedToday = today.toISOString().split("T")[0];
+    const formattedTomorrow = tomorrow.toISOString().split("T")[0];
+
+    // Set values for check-in and check-out fields
+    document.getElementById("txtDate").value = formattedToday;
+    document.getElementById("txtDate1").value = formattedTomorrow;
+    $(function () {
+      var dtToday = new Date();
+
+      var month = dtToday.getMonth() + 1;
+      var day = dtToday.getDate();
+      var year = dtToday.getFullYear();
+      if (month < 10) month = "0" + month.toString();
+      if (day < 10) day = "0" + day.toString();
+
+      var maxDate = year + "-" + month + "-" + day;
+
+      // or instead:
+      // var maxDate = dtToday.toISOString().substr(0, 10);
+
+      $("#txtDate").attr("min", maxDate);
+      $("#txtDate1").attr("min", maxDate);
+
+      // Add event listener for check-in date change
+      $("#txtDate").on("change", function () {
+        var checkinDate = $(this).val();
+        // Set the minimum checkout date based on the selected check-in date
+        $("#txtDate1").attr("min", checkinDate);
+      });
+    });
+  </script>
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+{% endblock %}

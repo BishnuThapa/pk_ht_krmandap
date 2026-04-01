@@ -280,3 +280,23 @@ DAISY_SETTINGS = {
         },
     },
 }
+
+
+
+LOGIN_REDIRECT_URL = 'index'
+LOGIN_URL = '/admin/login/'
+
+
+# email setting
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# EMAIL_HOST = 'mail.bukihotels.com'
+EMAIL_HOST = 's3181.fra1.stableserver.net'
+# EMAIL_PORT = 587
+# EMAIL_PORT = 465
+EMAIL_HOST_USER ='admin@bukihotels.com'
+EMAIL_HOST_PASSWORD ='MHOcC&K#H5'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+# EMAIL_USE_TLS = True
